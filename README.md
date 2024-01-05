@@ -52,7 +52,9 @@ $$
 
 海洋中的声传播用波动方程进行数学描述，波动方程的系数和边界条件由海洋环境导出。基本上有四种类型的模型(波动方程的计算机解)来描述海洋中的声传播，射线、频谱或快速场程序(FFP)、简正模态(NM)和抛物方程(PE)。射线理论是波动方程的一种渐近高频近似，而后三种模型或多或少是波动方程在各种温和约束下的直接解。高频极限不包括衍射现象。这些模型都能很好地处理海洋声环境的深度变化。同时考虑到环境水平变化(例如，倾斜的海底或空间可变的海洋学)的模型被称为距离有关模型。对于高频率(几千赫或以上)，射线理论最实用。其他三种类型在较低频率(1kHz以下)下更适用和可用。水声模型的层次结构如图1所示。这些模型的输出通常是传播损失，即在单位距离上相对于单位源强度，以 dB 表示。传输损耗Transmission Loss是传播损失Propagation Loss的负值，因此是一个正值。不同模型之间存在差异，射线理论预测的阴影区比波动理论模型更尖锐。
 
-<center><img src="./Report/lib/acoustic_propagation_models.png" alt="acoustic_propagation_models.png" width="50%" /></center>
+<div align="center">
+    <img src="./Report/lib/acoustic_propagation_models.png" alt="acoustic_propagation_models.png" width="50%" />
+</div>
 
 #### Ideal 波导
 
@@ -142,8 +144,9 @@ $$ \Phi = \sum_{n} \frac{u_n(z) \cdot u_n(z_0)}{\sqrt{\zeta_n}} \exp(i(\zeta_n r
 
 $$ H_0^{(1)}(\zeta r) \approx \sqrt{\frac{2}{\pi \zeta r}} e^{i(\zeta r-\pi/4)} $$
 
-<center><img src="./Report/lib/Kraken_normal_ wave_model.png" alt="Kraken_normal_ wave_model.png" width="50%" /></center>
-
+<div align="center">
+    <img src="./Report/lib/Kraken_normal_ wave_model.png" alt="Kraken_normal_ wave_model.png" width="50%" />
+</div>
 
 #### Bellhop 射线模型
 
@@ -163,7 +166,9 @@ $$ 2[\nabla A \cdot \nabla \Psi] + A \nabla^2 \Psi = 0 $$
 
 当频率 $f$ 超过某个阈值，声波可以在声速剖面创建的导管中传播，导管深度 $H$ 和声速 $c$ 对此现象至关重要。此外，射线模型也与波粒二象性量子理论相呼应，反映了声波的波动性和粒子性质。
 
-<center><img src="./Report/lib/Bellhop_ray_ wave_model.png" alt="Bellhop_ray_ wave_model.png" width="50%" /></center>
+<div align="center">
+    <img src="./Report/lib/Bellhop_ray_ wave_model.png" alt="Bellhop_ray_ wave_model.png" width="50%" />
+</div>
 
 #### 声速剖面
 
@@ -175,7 +180,9 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 使用 plotssp( ) 函数绘制浅海的声速剖面。
 
-<center><img src="./Sound_Field_Caculation/results/env_Sound_Speed.jpg" alt="env_Sound_Speed.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/env_Sound_Speed.jpg" alt="env_Sound_Speed.jpg" width="50%" />
+</div>
 
 ### 仿真
 
@@ -193,29 +200,41 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 [`kraken_Ideal_range_depth_mode.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode.jpg) 和 [`kraken_Ideal_range_depth_mode_index.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode_index.jpg)是 Kraken 模型在 Ideal 波导下的简正模态。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode.jpg" alt="kraken_Ideal_range_depth_mode.jpg" width="50%" /><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode_index.jpg" alt="kraken_Ideal_range_depth_mode_index.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode.jpg" alt="kraken_Ideal_range_depth_mode.jpg" width="50%" /><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_mode_index.jpg" alt="kraken_Ideal_range_depth_mode_index.jpg" width="50%" />
+</div>
 
 [`kraken_Pekeris_range_depth_mode.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode.jpg) 和 [`kraken_Pekeris_range_depth_mode_index.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode_index.jpg)是 Kraken 模型在 Pekeris 波导下的简正模态。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode.jpg" alt="kraken_Pekeris_range_depth_mode.jpg" width="50%" /><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode_index.jpg" alt="kraken_Pekeris_range_depth_mode_index.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode.jpg" alt="kraken_Pekeris_range_depth_mode.jpg" width="50%" /><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode_index.jpg" alt="kraken_Pekeris_range_depth_mode_index.jpg" width="50%" />
+</div>
 
 #### 声场计算
 
 [`kraken_Ideal_range_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下的声场传输损失 TL 随距离 Range 的变化。传输损失是衡量声波在传播过程中能量损失的指标，尤其是衡量远距离传播时的能量衰减情况。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" /></center>
+</div>
  
 [`kraken_Ideal_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_depth_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_shd.jpg" alt="kraken_Ideal_range_depth_shd.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_depth_shd.jpg" alt="kraken_Ideal_range_depth_shd.jpg" width="50%" />
+</div>
 
 [`kraken_Pekeris_range_shd.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_shd.jpg) 是 Kraken 模型在 Pekeris 波导条件下的声场传输损失 TL 随距离 Range 的变化。传输损失是衡量声波在传播过程中能量损失的指标，尤其是衡量远距离传播时的能量衰减情况。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_shd.jpg" alt="kraken_Pekeris_range_shd.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_shd.jpg" alt="kraken_Pekeris_range_shd.jpg" width="50%" />
+</div>
  
 [`kraken_Pekeris_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg) 是 Kraken 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
-<center><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg" alt="kraken_Pekeris_range_depth_shd.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg" alt="kraken_Pekeris_range_depth_shd.jpg" width="50%" />
+</div>
  
 [`bellhop_Ideal_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg) 是 Bellhop 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
@@ -223,8 +242,9 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 [`bellhop_Pekeris_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg) 是 Bellhop 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
-
-<div align="center"><img src="./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg" alt="bellhop_Pekeris_range_depth.jpg" width="50%" /></div>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg" alt="bellhop_Pekeris_range_depth.jpg" width="50%" />
+</div>
 
 ## 典型波形的模糊以及信道输出和信道响应
 
