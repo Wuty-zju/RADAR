@@ -219,7 +219,7 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 <div align="center">
     <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" /></center>
 </div>
- 
+
 [`kraken_Ideal_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_depth_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
 <div align="center">
@@ -231,13 +231,13 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 <div align="center">
     <img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_shd.jpg" alt="kraken_Pekeris_range_shd.jpg" width="50%" />
 </div>
- 
+
 [`kraken_Pekeris_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg) 是 Kraken 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
 <div align="center">
     <img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg" alt="kraken_Pekeris_range_depth_shd.jpg" width="50%" />
 </div>
- 
+
 [`bellhop_Ideal_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg) 是 Bellhop 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
 <center><img src="./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg" alt="bellhop_Ideal_range_depth.jpg" width="50%" /></center>
@@ -265,7 +265,6 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 ### 推导
 
 #### 波形生成
-
 
 ##### 窄带信号（带限、带通）
 
@@ -404,7 +403,51 @@ $$
 
 其中，$f_0$ 是中心频率，$\beta$ 是调频率，$t$ 是时间。
 
+#### 模糊函数
 
+模糊函数（Ambiguity Function）是描述信号在时延和多普勒频移（Doppler Shift）下的相似度。对于基带信号$u(t)$，其模糊函数$X_u(\tau, f_d)$定义为：
+
+$$
+X_u(\tau, f_d) = \int_{-\infty}^{\infty} u(t)u^*(t + \tau)e^{-j2\pi f_d t} dt
+$$
+
+其中，$\tau$ 是相对时间延迟，$f_d$ 是多普勒频移。模糊函数的绝对值平方$|\Psi_u(\tau, f_d)|^2$表示信号在时延和多普勒频移下的能量分布。
+
+模糊度图（Ambiguity Diagram）是模糊函数的图形表示，通常在延迟-多普勒（$\tau$-$f_d$）坐标系中描绘，用于直观显示信号的时间-频率分辨能力。模糊度图通常显示为一个三维图，其中峰值表示主瓣，而其它结构表示旁瓣。
+
+<div align="center">
+    <img src="./Report/lib/Ambiguity_Diagram_of_Pulse.png" alt="Ambiguity_Diagram_of_Pulse.png" width="50%" />
+</div>
+
+#### 基带复包络的自相关函数
+
+基带复包络的自相关函数是信号自身与其时间延迟版本的卷积，描述了信号在不同时间延迟下的自相似性，定义为：
+
+$$
+R_u(\tau) = \int_{-\infty}^{\infty} u(t)u^*(t + \tau) dt
+$$
+
+#### 匹配滤波器输出
+
+匹配滤波器输出是接收信号和匹配滤波器脉冲响应的卷积，它等同于基带复包络的自相关函数的时间反转。如果$u(t)$是发送信号，匹配滤波器输出$y(t)$为：
+
+$$
+y(t) = \int_{-\infty}^{\infty} u(t)u^*(t' - t)e^{-j2\pi f_d t'} dt'
+$$
+
+#### 时频分析
+
+时频分析是一种分析信号在时间和频率上变化的技术。一些常用的时频分析方法包括短时傅里叶变换（STFT）、连续小波变换（CWT）、离散小波变换（DWT）等。
+
+时域波形是信号在时间上的表示，而频域频谱是信号在频率上的表示。通过傅里叶变换可以将时域波形转换为频域频谱，反之亦然。
+
+时频分辨率与Heisenberg不确定原理说明了在时频分析中，时间分辨率$\Delta t$和频率分辨率$\Delta f$不能同时任意精确，它们的乘积受到限制：
+
+$$
+\Delta t \cdot \Delta f \geq \frac{1}{2}
+$$
+
+这表明信号的时间和频率特性存在一个基本的权衡。
 
 #### 典型波形
 
@@ -450,5 +493,4 @@ Gold 码信号是一种频率随时间随机变化的信号，其频率随时间
 
 ### 仿真
 
-
-
+1
