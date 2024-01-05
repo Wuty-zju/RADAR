@@ -20,19 +20,19 @@ $$
 \frac{\partial \rho'}{\partial t} = -\rho_0 \nabla \cdot \mathbf{v}
 $$
 
-其中，$\rho'$ 是密度扰动，$\rho_0$ 是平均密度，$\mathbf{v}$ 是速度场。动量守恒，也称为欧拉方程，关联了速度场和压力扰动：
+其中 $\rho'$ 是密度扰动，$\rho_0$ 是平均密度，$\mathbf{v}$ 是速度场。动量守恒，也称为欧拉方程，关联了速度场和压力扰动：
 
 $$
 \frac{\partial \mathbf{v}}{\partial t} = -\frac{1}{\rho_0} \nabla p'
 $$
 
-其中，$p'$ 表示压力扰动。状态方程进一步将压力扰动和密度扰动联系起来，对于线性介质，其形式为：
+其中 $p'$ 表示压力扰动。状态方程进一步将压力扰动和密度扰动联系起来，对于线性介质，其形式为：
 
 $$
 p' = \rho' c^2
 $$
 
-其中，$c$ 是声速。结合这些方程，我们得到波动方程的标准形式：
+其中 $c$ 是声速。结合这些方程，我们得到波动方程的标准形式：
 
 $$
 \nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
@@ -44,7 +44,7 @@ $$
 \nabla^2 \psi - \frac{1}{c^2} \frac{\partial^2 \psi}{\partial t^2} = 0
 $$
 
-其中，$p$ 代表声压，$\phi$ 和 $\psi$ 分别代表速度势和位移势，而 $\nabla^2$ 是拉普拉斯算子，表示空间的二阶导数。通过求解这些波动方程，可以预测声波在不同介质中的传播特性，这是声纳和雷达系统分析的基础。
+其中 $p$ 代表声压，$\phi$ 和 $\psi$ 分别代表速度势和位移势，而 $\nabla^2$ 是拉普拉斯算子，表示空间的二阶导数。通过求解这些波动方程，可以预测声波在不同介质中的传播特性，这是声纳和雷达系统分析的基础。
 
 #### 声传播模型
 
@@ -179,9 +179,9 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 ### 仿真
 
-#### 声场计算
-
 使用 AT 工具箱在 MATLAB 进行声场仿真仿真，在 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中包含用于声场仿真的 MATLAB 代码和资源。
+
+#### 模态计算
 
 [`Sound_Field_Caculation/lib`](./Sound_Field_Caculation/lib) 包含了多个MATLAB脚本和可执行文件，这些文件为整个仿真提供了必要的计算工具和函数库。其中的MATLAB脚本，如 `read_*.m` 脚本用于读取和处理不同类型的数据文件， `plot*.m` 等脚本则用于绘制和分析仿真结果，[`kraken.exe`](./Sound_Field_Caculation/lib/kraken.exe) 和 [`bellhop.exe`](./Sound_Field_Caculation/lib/bellhop.exe) 是 AT 工具箱仿真的核心计算可执行文件。
 
@@ -199,6 +199,8 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 <center><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode.jpg" alt="kraken_Pekeris_range_depth_mode.jpg" width="50%" /><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_mode_index.jpg" alt="kraken_Pekeris_range_depth_mode_index.jpg" width="50%" /></center>
 
+#### 声场计算
+
 [`kraken_Ideal_range_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下的声场传输损失 TL 随距离 Range 的变化。传输损失是衡量声波在传播过程中能量损失的指标，尤其是衡量远距离传播时的能量衰减情况。
 
 <center><img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" /></center>
@@ -214,3 +216,73 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 [`kraken_Pekeris_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg) 是 Kraken 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
 <center><img src="./Sound_Field_Caculation/results/kraken_Pekeris_range_depth_shd.jpg" alt="kraken_Pekeris_range_depth_shd.jpg" width="50%" /></center>
+ 
+[`bellhop_Ideal_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg) 是 Bellhop 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
+
+<center><img src="./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg" alt="bellhop_Ideal_range_depth.jpg" width="50%" /></center>
+
+[`bellhop_Pekeris_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg) 是 Bellhop 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
+
+
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg" alt="bellhop_Pekeris_range_depth.jpg" width="50%" />
+</div>
+
+## 典型波形的模糊以及信道输出和信道响应
+
+### 要求
+
+1. 生成典型波形（如 CW、LFM、HFM、M 码、巴克码、Gold 码、FMCW 等）。
+
+2. 计算并绘制典型波形的模糊度图（含上调频和下调频，至少对比两种不同时间带宽积情况下模糊度图）。
+
+3. 任选两种波形作为 Bellhop 声场软件的信号输入，计算并绘制输出波形，分析其与输入信号之间的差异。
+
+4. 利用输入和输出信号计算水声信道脉冲响应和频率响应，分析其与信道真实响应之间的差异。
+
+### 推导
+
+#### 典型波形
+
+##### CW
+
+连续波（Continuous Wave，CW）是一种不间断的波形，其频率和振幅都是恒定的。CW 信号的频谱是一个单频信号，其频率为 CW 信号的频率，幅度为 CW 信号的幅度。CW 信号的频谱是一个单频信号，其频率为 CW 信号的频率，幅度为 CW 信号的幅度。CW 信号的频谱是一个单频信号，其频率为 CW 信号的频率，幅度为 CW 信号的幅度。CW 信号的频谱是一个单频信号，其频率为 CW 信号的频率，幅度为 CW 信号的幅度。
+
+##### LFM
+
+线性调频（Linear Frequency Modulation，LFM）信号是一种频率随时间线性变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。LFM 信号的频谱是一个宽度为调宽的矩形，其中心频率为 LFM 信号的中心频率，幅度为 LFM 信号的幅度。
+
+##### HFM
+
+高斯调频（Gaussian Frequency Modulation，HFM）信号是一种频率随时间高斯变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。HFM 信号的频谱是一个宽度为调宽的高斯曲线，其中心频率为 HFM 信号的中心频率，幅度为 HFM 信号的幅度。
+
+##### M 码
+
+M 码信号是一种频率随时间随机变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。M 码信号的频谱是一个宽度为调宽的随机曲线，其中心频率为 M 码信号的中心频率，幅度为 M 码信号的幅度。
+
+##### 巴克码
+
+巴克码信号是一种频率随时间随机变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。巴克码信号的频谱是一个宽度为调宽的随机曲线，其中心频率为巴克码信号的中心频率，幅度为巴克码信号的幅度。
+
+##### Gold 码
+
+Gold 码信号是一种频率随时间随机变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。Gold 码信号的频谱是一个宽度为调宽的随机曲线，其中心频率为 Gold 码信号的中心频率，幅度为 Gold 码信号的幅度。
+
+##### FMCW
+
+调频连续波（Frequency Modulated Continuous Wave，FMCW）信号是一种频率随时间线性变化的信号，其频率随时间的变化率称为调频率，调频率的倒数称为调宽。FMCW 信号的频谱是一个宽度为调宽的矩形，其中心频率为 FMCW 信号的中心频率，幅度为 FMCW 信号的幅度。
+
+#### 模糊度图
+
+模糊度图是一种用于分析信号的频谱特性的图形，它可以用来分析信号的频谱特性，如频率、带宽、调频率等。模糊度图是一种用于分析信号的频谱特性的图形，它可以用来分析信号的频谱特性，如频率、带宽、调频率等。模糊度图是一种用于分析信号的频谱特性的图形，它可以用来分析信号的频谱特性，如频率、带宽、调频率等。模糊度图是一种用于分析信号的频谱特性的图形，它可以用来分析信号的频谱特性，如频率、带宽、调频率等。
+
+#### 信道输出
+
+信道输出是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道输出是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道输出是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道输出是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。
+
+#### 信道响应
+
+信道响应是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道响应是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道响应是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。信道响应是指信道中的信号经过信道传输后的输出信号，它可以用来分析信道的传输特性，如传输损耗、传输延迟、传输失真等。
+
+### 仿真
+
