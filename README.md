@@ -561,8 +561,6 @@ $$\chi(\tau, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) e^{-j2\pi f_d t}
 
 模糊函数的三维表面图 [`Ambiguity_Function_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_SP_Signal.jpg) 是将模糊函数 $\chi(\tau, f_d)$ 在三维空间（时间延迟 $\tau$ 、多普勒频移 $f_d$ 和幅值）中表示。
 
-[`Ambiguity_Function_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_SP_Signal.jpg) 是将模糊函数 $\chi(\tau, f_d)$ 在三维空间（时间延迟 $\tau$ 、多普勒频移 $f_d$ 和幅值）中表示。
-
 <div align="center">
     <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_for_SP_Signal.jpg" alt="Ambiguity_Function_for_SP_Signal.jpg" width="50%" />
 </div>
