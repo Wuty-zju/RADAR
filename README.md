@@ -240,7 +240,9 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 [`bellhop_Ideal_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg) 是 Bellhop 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
-<center><img src="./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg" alt="bellhop_Ideal_range_depth.jpg" width="50%" /></center>
+<div align="center">
+    <img src="./Sound_Field_Caculation/results/bellhop_Ideal_range_depth.jpg" alt="bellhop_Ideal_range_depth.jpg" width="50%" />
+</div>
 
 [`bellhop_Pekeris_range_depth.jpg`](./Sound_Field_Caculation/results/bellhop_Pekeris_range_depth.jpg) 是 Bellhop 模型在 Pekeris 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
 
