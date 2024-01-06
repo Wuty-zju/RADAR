@@ -166,13 +166,13 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 使用 AT 工具箱在 MATLAB 进行声场仿真，在 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中包含用于声场仿真的 MATLAB 代码和资源。
 
-[`Sound_Field_Caculation/lib`](./Sound_Field_Caculation/lib) 包含了多个MATLAB脚本和可执行文件，这些文件为整个仿真提供了必要的计算工具和函数库。其中的MATLAB脚本，如 `read_*.m` 脚本用于读取和处理不同类型的数据文件， `plot*.m` 等脚本则用于绘制和分析仿真结果，[`kraken.exe`](./Sound_Field_Caculation/lib/kraken.exe) 和 [`bellhop.exe`](./Sound_Field_Caculation/lib/bellhop.exe) 是 AT 工具箱仿真的核心计算可执行文件。
+[`Sound_Field_Caculation/lib`](./Sound_Field_Caculation/lib) 包含多个MATLAB脚本和可执行文件，这些文件为整个仿真提供了必要的计算工具和函数库。其中的MATLAB脚本，如 `read_*.m` 脚本用于读取和处理不同类型的数据文件， `plot*.m` 等脚本则用于绘制和分析仿真结果，[`kraken.exe`](./Sound_Field_Caculation/lib/kraken.exe) 和 [`bellhop.exe`](./Sound_Field_Caculation/lib/bellhop.exe) 是 AT 工具箱仿真的核心计算可执行文件。
 
-[`Sound_Field_Caculation/env`](./Sound_Field_Caculation/env) 包含了各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.flp` 和 `*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
+[`Sound_Field_Caculation/env`](./Sound_Field_Caculation/env) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.flp` 和 `*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
 
 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中的 `*.m` 是仿真的主要脚本。[`kraken_main.m`](./Sound_Field_Caculation/kraken_main.m) 用于执行 Kraken 模型的仿真计算，处理与深水或复杂声学环境相关的声场问题，[`bellhop_main.m`](./Sound_Field_Caculation/bellhop_main.m) 用于 Bellhop 模型，适用于浅水或简化环境下的声场仿真。
 
-[`Sound_Field_Caculation/results`](./Sound_Field_Caculation/results) 包含了多个以图像形式存储的仿真结果，展示了声场的分布、模态结构、声速剖面等。
+[`Sound_Field_Caculation/results`](./Sound_Field_Caculation/results) 包含仿真结果，展示了声场的分布、模态结构、声速剖面等。
 
 #### 模态计算
 
@@ -193,7 +193,7 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 [`kraken_Ideal_range_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下的声场传输损失 TL 随距离 Range 的变化。传输损失是衡量声波在传播过程中能量损失的指标，尤其是衡量远距离传播时的能量衰减情况。
 
 <div align="center">
-    <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" /></center>
+    <img src="./Sound_Field_Caculation/results/kraken_Ideal_range_shd.jpg" alt="kraken_Ideal_range_shd.jpg" width="50%" />
 </div>
 
 [`kraken_Ideal_range_depth_shd.jpg`](./Sound_Field_Caculation/results/kraken_Ideal_range_depth_shd.jpg) 是 Kraken 模型在 Ideal 波导条件下声场在水平距离和深度上的分布，其中颜色的变化代表了不同声压级的分布。
@@ -448,7 +448,7 @@ $$\tau_{rms}^2 = \frac{\int_{-\infty}^{\infty} (2\pi t)^2 |x(t)|^2 dt}{\int_{-\i
 
 其中 $x(t)$ 是信号的时域表达式。该公式计算了信号能量在时间上分布的平均持续时间平方。
 
-#### 调频信号FM
+#### 调频信号 FM
 
 调频信号FM是一种其频率随时间变化以携带信息的信号。在FM信号中，信息不是通过振幅而是通过频率的变化来编码。
 
@@ -513,3 +513,148 @@ $$y(p, t) = \int_{-\infty}^{\infty} h(p, \tau) x(p, t - \tau) d\tau$$
 ### 仿真
 
 使用 MATLAB 进行波形仿真，完成波形生成、模糊度函数计算、模糊度图计算等。在 [`Signal_Ambiguity_Function`](./Signal_Ambiguity_Function) 中包含用于波形仿真的 MATLAB 代码和资源。
+
+[`Signal_Ambiguity_Function/lib`](./Signal_Ambiguity_Function/lib) 包含 MATLAB 脚本和函数，为信号模糊函数的计算提供了必要的工具和函数库。
+
+[`Signal_Ambiguity_Function`](./Signal_Ambiguity_Function) 中的 `*.m` 是主要的仿真脚本。[`Signal_Ambiguity_Function.m`](./Signal_Ambiguity_Function/Signal_Ambiguity_Function.m) 调用 `af_sp`、`af_gauss` 和 `af_lfm` 等函数计算了几种信号的模糊函数，并生成了相应的三维表面图、3dB衰减等高线图、零多普勒频移时的模糊函数图和零时间延迟时的模糊函数图。
+
+[`Signal_Ambiguity_Function/results`](./Signal_Ambiguity_Function/results) 包含仿真结果，展示信号模糊函数。
+
+#### 模糊函数计算
+
+##### 单脉冲 SP 信号
+
+单脉冲信号（单载频矩形脉冲信号），是一种在固定频率下发射的矩形脉冲信号。
+
+$$
+s(t) = \begin{cases} 
+A, & \text{if } |t| \leq \frac{T_p}{2} \\
+0, & \text{otherwise} 
+\end{cases}
+$$
+
+其中，$A$ 是信号幅度，$T_p$ 是脉冲宽度。
+
+模糊函数是用于描述信号在时间延迟 $\tau$ 和多普勒频移 $f_d$ 下的变化情况。单脉冲信号的模糊函数定义为：
+
+$$\chi(\tau, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) e^{-j2\pi f_d t} dt$$
+
+模糊函数的三维表面图 [`Ambiguity_Function_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_SP_Signal.jpg) 是将模糊函数 $\chi(\tau, f_d)$ 在三维空间（时间延迟 $\tau$ 、多普勒频移 $f_d$ 和幅值）中表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_for_SP_Signal.jpg" alt="Ambiguity_Function_for_SP_Signal.jpg" width="50%" />
+</div>
+
+3dB衰减等高线 [`Ambiguity_Diagram_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_SP_Signal.jpg) 是指模糊函数幅值下降到最大值的一半（即最大值的 -3dB ）时的 $\tau$ 和 $f_d$ 的轮廓线。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_SP_Signal.jpg" alt="Ambiguity_Diagram_for_SP_Signal.jpg" width="50%" />
+</div>
+
+当多普勒频移 $f_d = 0$ 时，单脉冲信号的模糊函数专注于时间延迟 $\tau$ 的影响：
+
+$$\chi(\tau, 0) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) dt$$
+
+零多普勒频移时的模糊函数 [`Ambiguity_Function_of_Range_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_SP_Signal.jpg) 是将模糊函数 $\chi(\tau, 0)$ 在时间延迟 $\tau$ 和幅值之间表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_SP_Signal.jpg" alt="Ambiguity_Function_of_Range_for_SP_Signal.jpg" width="50%" />
+</div>
+
+当时间延迟 $\tau = 0$ 时，单脉冲信号的模糊函数专注于多普勒频移 $f_d$ 的影响。
+
+零时间延迟时的模糊函数 [`Ambiguity_Function_of_Velocity_for_SP_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_SP_Signal.jpg) 是将模糊函数 $\chi(0, f_d)$ 在多普勒频移 $f_d$ 和幅值之间表示。
+
+$$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_SP_Signal.jpg" alt="Ambiguity_Function_of_Velocity_for_SP_Signal.jpg" width="50%" />
+</div>
+
+##### 高斯脉冲 Gauss 信号
+
+高斯脉冲信号（单载频高斯脉冲模糊函数），是一种以高斯函数形式调制的脉冲信号。
+
+$$s(t) = A e^{-\pi \beta^2 t^2} e^{j2\pi f_0 t}$$
+
+其中，$A$ 是信号的幅度，$\beta$ 是调频率，表示脉冲宽度的倒数，$f_0$ 是中心频率。
+
+模糊函数是用于描述信号在时间延迟 $\tau$ 和多普勒频移 $f_d$ 下的变化情况。高斯脉冲信号的模糊函数定义为：
+
+$$\chi(\tau, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) e^{-j2\pi f_d t} dt$$
+
+模糊函数的三维表面图 [`Ambiguity_Function_for_Gaussian_Pulse_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_Gaussian_Pulse_Signal.jpg) 是将模糊函数 $\chi(\tau, f_d)$ 在三维空间（时间延迟 $\tau$ 、多普勒频移 $f_d$ 和幅值）中表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_for_Gaussian_Pulse_Signal.jpg" alt="Ambiguity_Function_for_Gaussian_Pulse_Signal.jpg" width="50%" />
+</div>
+
+3dB衰减等高线 [`Ambiguity_Diagram_for_Gaussian_Pulse_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_Gaussian_Pulse_Signal.jpg) 是指模糊函数幅值下降到最大值的一半（即最大值的 -3dB ）时的 $\tau$ 和 $f_d$ 的轮廓线。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_Gaussian_Pulse_Signal.jpg" alt="Ambiguity_Diagram_for_Gaussian_Pulse_Signal.jpg" width="50%" />
+</div>
+
+当多普勒频移 $f_d = 0$ 时，高斯脉冲信号的模糊函数专注于时间延迟 $\tau$ 的影响：
+
+$$\chi(\tau, 0) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) dt$$
+
+零多普勒频移时的模糊函数 [`Ambiguity_Function_of_Range_for_Gaussian_Pulse_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_Gaussian_Pulse_Signal.jpg) 是将模糊函数 $\chi(\tau, 0)$ 在时间延迟 $\tau$ 和幅值之间表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_Gaussian_Pulse_Signal.jpg" alt="Ambiguity_Function_of_Range_for_Gaussian_Pulse_Signal.jpg" width="50%" />
+</div>
+
+当时间延迟 $\tau = 0$ 时，高斯脉冲信号的模糊函数专注于多普勒频移 $f_d$ 的影响。
+
+$$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
+
+零时间延迟时的模糊函数 [`Ambiguity_Function_of_Velocity_for_Gaussian_Pulse_Signal.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_Gaussian_Pulse_Signal.jpg) 是将模糊函数 $\chi(0, f_d)$ 在多普勒频移 $f_d$ 和幅值之间表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_Gaussian_Pulse_Signal.jpg" alt="Ambiguity_Function_of_Velocity_for_Gaussian_Pulse_Signal.jpg" width="50%" />
+</div>
+
+##### 线性调频 LFM 信号
+
+线性调频信号（线性调频脉冲信号），是一种以线性调频方式调制的脉冲信号。
+
+$$s(t) = \text{Rect}\left(\frac{t}{\tau_0}\right) e^{j2\pi(f_0t + \beta t^2 / 2)}$$
+
+其中，$\text{Rect}(\cdot)$ 是矩形函数，$\tau_0$ 是脉冲宽度，$f_0$ 是起始频率，$\beta$ 是频率调制斜率。
+
+模糊函数是用于描述信号在时间延迟 $\tau$ 和多普勒频移 $f_d$ 下的变化情况。线性调频信号的模糊函数定义为：
+
+$$\chi(\tau, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) e^{-j2\pi f_d t} dt$$
+
+模糊函数的三维表面图 [`Ambiguity_Function_for_LFM_signal_B_4e5.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_LFM_signal_B_4e5.jpg) [`Ambiguity_Function_for_LFM_signal_B_4e6.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_for_LFM_signal_B_4e6.jpg) 是将模糊函数 $\chi(\tau, f_d)$ 在三维空间（时间延迟 $\tau$ 、多普勒频移 $f_d$ 和幅值）中表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Function_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Function_for_LFM_signal_B_4e6.jpg" width="50%" />
+</div>
+
+3dB衰减等高线 [`Ambiguity_Diagram_for_LFM_signal_B_4e5.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_LFM_signal_B_4e5.jpg) [`Ambiguity_Diagram_for_LFM_signal_B_4e6.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_LFM_signal_B_4e6.jpg) 是指模糊函数幅值下降到最大值的一半（即最大值的 -3dB ）时的 $\tau$ 和 $f_d$ 的轮廓线。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Diagram_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Diagram_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Diagram_for_LFM_signal_B_4e6.jpg" width="50%" />
+</div>
+
+当多普勒频移 $f_d = 0$ 时，线性调频信号的模糊函数专注于时间延迟 $\tau$ 的影响：
+
+$$\chi(\tau, 0) = \int_{-\infty}^{+\infty} s(t) s^*(t - \tau) dt$$
+
+零多普勒频移时的模糊函数 [`Ambiguity_Function_of_Range_for_LFM_signal_B_4e5.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_LFM_signal_B_4e5.jpg) [`Ambiguity_Function_of_Range_for_LFM_signal_B_4e6.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_LFM_signal_B_4e6.jpg) 是将模糊函数 $\chi(\tau, 0)$ 在时间延迟 $\tau$ 和幅值之间表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Function_of_Range_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Range_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Function_of_Range_for_LFM_signal_B_4e6.jpg" width="50%" />
+</div>
+
+当时间延迟 $\tau = 0$ 时，线性调频信号的模糊函数专注于多普勒频移 $f_d$ 的影响。
+
+$$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
+
+零时间延迟时的模糊函数 [`Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg) [`Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg`](./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg) 是将模糊函数 $\chi(0, f_d)$ 在多普勒频移 $f_d$ 和幅值之间表示。
+
+<div align="center">
+    <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" width="50%" />
+</div>
