@@ -74,7 +74,7 @@ $$\Psi(r, z) = -\frac{iS\omega}{2D} \sum_{m=1}^{\infty} \sin(k_{zm}z)\sin(k_{zm}
 
 $$v_m = \frac{\omega}{k_{rm}}$$
 
-$$u_m = \frac{d\omega}{dk_{rm}$$
+$$u_m = \frac{d\omega}{dk_{rm}}$$
 
 Ideal 波导提供了一个简单的框架来理解声波在海洋环境中的基本传播特性，但它忽略了实际海洋环境中的许多复杂因素，如声速剖面的变化、海底的反射和散射等。
 
@@ -308,7 +308,7 @@ $$\frac{S}{N}_{mf} = \frac{2E}{N_0}$$
 
 匹配滤波器的增益可以通过输出和输入SNR的比值来定义：
 
-$$TB = \frac{{SNR}_{output}}{{SNR}_{input}}$$
+$$TB = \frac{SNR_{output}}{SNR_{input}}$$
 
 这里 $TB$ 是时间-带宽积，一个描述信号时频特性的重要参数。
 
