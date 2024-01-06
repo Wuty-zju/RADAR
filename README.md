@@ -66,7 +66,7 @@ $$k_{rm} = \sqrt{k^2 - k_{zm}^2} = \sqrt{\left(\frac{\omega}{c}\right)^2 - \left
 
 声压 $\Psi(r, z)$ 的模态展开形式如下：
 
-$$\Psi(r, z) = -\frac{iS\omega}{2D} \sum_{m=1}^{\infty} \sin(k_{zm}z)\sin(k_{zm}z_s)H^{(1)}_0(k_{rm}r)$$
+$$\Psi(r, z) = -\frac{iS\omega}{2D} \sum_{m=1}^{\infty} \sin\left( k_{zm} z \right) \sin\left( k_{zm} z_s \right) H_0^{(1)} \left( k_{rm} r \right)$$
 
 其中， $S$ 是源项， $z_s$ 是声源的深度， $H^{(1)}_0$ 是零阶第一类汉克尔函数，代表径向传播的声波。
 
