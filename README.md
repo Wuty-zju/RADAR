@@ -164,7 +164,7 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 ### 仿真
 
-使用 AT 工具箱在 MATLAB 进行声场仿真仿真，在 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中包含用于声场仿真的 MATLAB 代码和资源。
+使用 AT 工具箱在 MATLAB 进行声场仿真，在 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中包含用于声场仿真的 MATLAB 代码和资源。
 
 [`Sound_Field_Caculation/lib`](./Sound_Field_Caculation/lib) 包含了多个MATLAB脚本和可执行文件，这些文件为整个仿真提供了必要的计算工具和函数库。其中的MATLAB脚本，如 `read_*.m` 脚本用于读取和处理不同类型的数据文件， `plot*.m` 等脚本则用于绘制和分析仿真结果，[`kraken.exe`](./Sound_Field_Caculation/lib/kraken.exe) 和 [`bellhop.exe`](./Sound_Field_Caculation/lib/bellhop.exe) 是 AT 工具箱仿真的核心计算可执行文件。
 
@@ -512,4 +512,4 @@ $$y(p, t) = \int_{-\infty}^{\infty} h(p, \tau) x(p, t - \tau) d\tau$$
 
 ### 仿真
 
-使用 MATLAB 完成波形生成、模糊度函数计算、模糊度图计算
+使用 MATLAB 进行波形仿真，完成波形生成、模糊度函数计算、模糊度图计算等。在 [`Signal_Ambiguity_Function`](./Signal_Ambiguity_Function) 中包含用于波形仿真的 MATLAB 代码和资源。

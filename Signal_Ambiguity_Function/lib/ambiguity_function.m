@@ -1,32 +1,3 @@
-%{  
-    模糊函数
-    paraInput:
-            signal :1*N matrix
-            fs     :double
-            Doppler cut: hz
-                       指示多普勒维度上显示位置
-                       默认为中间
-            dalay cut : ms
-                        指示时延维度上的显示位置
-                       默认为中间
-            Max_doppler :   多普勒维最大点数
-            Max_delay :     时延维最大点数
-            default_cut: 当信号长度大于时延维最大点数时对信号的处理方式
-                        "cut" :直接阶段信号
-                        "resample":对信号重采样
-    returntype:
- 
-            ambiguity(signal, fs, varargin);
-            ambi = ambiguity(signal, fs, varargin); 此时不绘图
-            [ambi, timeax] = ambiguity(signal, fs, varargin); 此时不绘图
-            [ambi, timeax,fd] ambiguity(signal, fs, varargin); 此时不绘图
- 
-            ambi:模糊函数值
-            timeax:时延轴
-            fd:多普勒频移轴
-        
-%} 
- 
 function varargout = ambiguity(signal, fs, varargin)
 p = inputParser;
  
@@ -41,7 +12,7 @@ Max_doppler = floor(p.Results.Max_doppler);
 Max_delay = floor(p.Results.Max_delay);
  
 if Max_doppler <= 1 || Max_delay<= 1
-    ME = MException('myComponent:inputError','最大点数太小');
+    ME = MException('myComponent:inputError','锟斤拷锟斤拷锟斤拷太小');
     throw(ME);
 end
  
@@ -121,6 +92,6 @@ if isplot
     contour(timeax,fd,ambi)
     xlabel('frequency[Hz]');
     ylabel('delay [ms]');
-    title("等高线图");
+    title("锟饺革拷锟斤拷图");
 end
 end
