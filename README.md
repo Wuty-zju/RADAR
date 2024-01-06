@@ -1,7 +1,3 @@
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 # 声纳与雷达系统 课程报告
 
 吴天宇 12334125
@@ -26,7 +22,7 @@ $$
 \frac{\partial \rho'}{\partial t} = -\rho_0 \nabla \cdot \mathbf{v}
 $$
 
-其中 $\rho'$ 是密度扰动，$\rho_0$ 是平均密度，$\mathbf{v}$ 是速度场。动量守恒，也称为欧拉方程，关联了速度场和压力扰动：
+其中 $\rho'$ 是密度扰动， $\rho_0$ 是平均密度， $\mathbf{v}$ 是速度场。动量守恒，也称为欧拉方程，关联了速度场和压力扰动：
 
 $$
 \frac{\partial \mathbf{v}}{\partial t} = -\frac{1}{\rho_0} \nabla p'
@@ -90,7 +86,7 @@ $$
 \Psi(r, z) = -\frac{iS\omega}{2D} \sum_{m=1}^{\infty} \sin(k_{zm}z)\sin(k_{zm}z_s)H^{(1)}_0(k_{rm}r)
 $$
 
-其中，$S$是源项，$z_s$是声源的深度，$H^{(1)}_0$是零阶第一类汉克尔函数，代表径向传播的声波。
+其中，$S$ 是源项，$z_s$ 是声源的深度，$H^{(1)}_0$ 是零阶第一类汉克尔函数，代表径向传播的声波。
 
 声场的相速度$v_m$和群速度$u_m$分别由下列公式给出：
 
