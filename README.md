@@ -1,4 +1,6 @@
-import math
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 # 声纳与雷达系统 课程报告
 
@@ -594,4 +596,4 @@ $$
 
 ### 仿真
 
-使用 MATLAB 完成波形生成、模糊度函数计算、模糊度图生成
+使用 MATLAB 完成波形生成、模糊度函数计算、模糊度图计算
