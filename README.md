@@ -658,3 +658,55 @@ $$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
 <div align="center">
     <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" width="50%" />
 </div>
+
+## 检测篇
+
+### 要求
+
+基于恒虚警准则的声纳检测阈计算
+
+1. 声纳与雷达一般采用恒虚警率检测（CFAR），简述恒虚警率检测（CFAR）、最大似然检测（ML）与贝叶斯检测的关系（提供公式和框图）。
+
+2. 简述贝叶斯公式中后验概率与似然度和先验概率之间关系在声纳与雷达检测中的作用（提供公式和框图）。
+
+3. 计算当虚警概率 $P_f = 10^{-4}$ ，检测概率  $P_d = 90\%$ 时，时间带宽积 $BT = 1000$ 时，某型被动声纳能量检测器的检测阈 DT（提供公式和计算过程）。
+
+4. 计算当虚警概率 $P_f = 10^{-4}$ ，检测概率 $P_d = 80\%$ 时，时间带宽积 $BT = 1000$ 时，某型主动声纳匹配滤波器的检测阈 DT（提供公式和计算过程）。
+
+Tip. 详参课件 5-统计检测之作业，接收机工作特性曲线 ROC 的推导和使用，检测阈的推导和使用详参伯迪克《水声系统分析》。
+
+## 估计篇
+
+### 要求
+
+基于最大似然估计 MLE 的声纳与雷达参数 CRB 推导及仿真计算
+
+1. 距离估计的 CRB 推导及仿真计算。
+
+2. 速度估计的 CRB 推导及仿真计算。
+
+3. 方位估计的 CRB 推导及仿真计算。
+
+4. 简述最大后验估计和最大似然估计的联系与区别以及对 CRB 的影响。
+
+### 推导
+
+## 应用篇
+
+### 要求
+
+基于声纳方程的典型声纳系统的作用距离计算
+
+1. 主动声纳作用距离计算。
+
+2. 被动声纳作用距离计算。
+
+3. 通信声纳作用距离计算。
+
+4. 上述三类声纳检测阈之间的联系和区别。
+
+5. 优质因数与作用距离之间的关系。
+
+### 推导
+
+## 
