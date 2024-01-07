@@ -10,8 +10,6 @@
 
 ### 推导
 
-  
-
 ## 入门篇
 
 ### 要求
@@ -680,6 +678,8 @@ $$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
 <div align="center">
     <img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e5.jpg" width="50%" /><img src="./Signal_Ambiguity_Function/results/Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" alt="Ambiguity_Function_of_Velocity_for_LFM_signal_B_4e6.jpg" width="50%" />
 </div>
+
+#### 水声信道计算
 
 ## 检测篇
 
