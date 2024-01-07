@@ -10,16 +10,6 @@
 
 ### 推导
 
-![1](./Report/lib/3d_scatter_plot.svg)
-
-[text](./Report/lib/3d_scatter_plot.html)
-
-<div style="color: #3b3b3b;background-color: #ffffff;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #3b3b3b;text-decoration: underline;">./Report/lib/3d_scatter_plot.html</span></div></div>
-
-<iframe src="./Report/lib/3d_scatter_plot.htmll" width="600" height="400"></iframe>
-
-<iframe src="<div style="color: #3b3b3b;background-color: #ffffff;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #0000ff;">./Report/lib/3d_scatter_plot.html</span></div></div>" width="600" height="400"></iframe>
-
 ## 入门篇
 
 ### 要求
@@ -757,6 +747,6 @@ Tip. 详参课件 5-统计检测之作业，接收机工作特性曲线 ROC 的�
 
 4. 虚警概率 $P_f ≤ 10^{-4}$ 。
 
-Tip.指标论证：混响控制的主动声纳方程 $SL - 2TL - RL + TS > DT$ 、声源级 SL 、传播损失 TL 、混响级 RL 、目标强度 TS 、检测阈 DT 。
+Tip. 指标论证：混响控制的主动声纳方程 $SL - 2TL - RL + TS > DT$ 、声源级 SL 、传播损失 TL 、混响级 RL 、目标强度 TS 、检测阈 DT 。
 
-Tip.方案设计：波形设计、波束形成、匹配滤波、目标检测（目标跟踪、目标分类）。
+Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（目标跟踪、目标分类）。
