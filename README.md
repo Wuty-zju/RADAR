@@ -10,6 +10,16 @@
 
 ### 推导
 
+![1](./Report/lib/3d_scatter_plot.svg)
+
+[text](./Report/lib/3d_scatter_plot.html)
+
+<div style="color: #3b3b3b;background-color: #ffffff;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #3b3b3b;text-decoration: underline;">./Report/lib/3d_scatter_plot.html</span></div></div>
+
+<iframe src="./Report/lib/3d_scatter_plot.htmll" width="600" height="400"></iframe>
+
+<iframe src="<div style="color: #3b3b3b;background-color: #ffffff;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #0000ff;">./Report/lib/3d_scatter_plot.html</span></div></div>" width="600" height="400"></iframe>
+
 ## 入门篇
 
 ### 要求
@@ -188,7 +198,7 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 [`Sound_Field_Caculation/lib`](./Sound_Field_Caculation/lib) 包含多个MATLAB脚本和可执行文件，这些文件为整个仿真提供了必要的计算工具和函数库。其中的MATLAB脚本，如 `read_*.m` 脚本用于读取和处理不同类型的数据文件， `plot*.m` 等脚本则用于绘制和分析仿真结果，[`kraken.exe`](./Sound_Field_Caculation/lib/kraken.exe) 和 [`bellhop.exe`](./Sound_Field_Caculation/lib/bellhop.exe) 是 AT 工具箱仿真的核心计算可执行文件。
 
-[`Sound_Field_Caculation/env`](./Sound_Field_Caculation/env) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.flp` 和 `*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
+[`Sound_Field_Caculation/conf`](./Sound_Field_Caculation/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.flp` 和 `*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
 
 [`Sound_Field_Caculation`](./Sound_Field_Caculation) 中的 `*.m` 是仿真的主要脚本。[`kraken_main.m`](./Sound_Field_Caculation/kraken_main.m) 用于执行 Kraken 模型的仿真计算，处理与深水或复杂声学环境相关的声场问题，[`bellhop_main.m`](./Sound_Field_Caculation/bellhop_main.m) 用于 Bellhop 模型，适用于浅水或简化环境下的声场仿真。
 
