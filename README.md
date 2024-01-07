@@ -697,19 +697,71 @@ $$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
 
 [`Hydroacoustic_Channel_Calculation/results`](./Hydroacoustic_Channel_Calculation/results) 包含仿真结果，展示使用 Bellohop 模型产生水声信道，采用相干检测的方法进行PSK、QAM调制解调的仿真结果。
 
-单位冲激响应是当输入信号为单位冲激信号时，系统的输出响应。归一化冲激响应是将单位冲激响应除以其最大值，使其最大值为1。由水声信道的单位冲激响应和归一化冲激响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。
+单位脉冲响应是当输入信号为单位脉冲信号时，系统的输出响应。归一化脉冲响应是将单位冲激响应除以其最大值，使其最大值为1。
+
+单位脉冲响应，记作 $h(t)$，是线性时不变系统对单位脉冲信号 $\delta(t)$ 的响应。单位脉冲信号是一种理想化的信号，其特点是在 $t=0$ 时刻具有无限大的幅值，而在其他时刻的值为零。数学上，单位脉冲信号定义为：
+
+$$
+\delta(t) = 
+\begin{cases}
+\infty, & \text{if } t = 0\\
+0, & \text{if } t \neq 0
+\end{cases}
+$$
+
+并且满足 $\int_{-\infty}^{\infty} \delta(t) \, dt = 1$。
+
+对于一个线性时不变系统，其输出 $y(t)$ 可以通过单位脉冲响应 $h(t)$ 和输入信号 $x(t)$ 的卷积来计算：
+
+$$
+y(t) = \int_{-\infty}^{\infty} h(\tau) x(t - \tau) \, d\tau
+$$
+
+其中，$x(t)$ 是输入信号，$h(t)$ 是系统的单位脉冲响应。
+
+归一化脉冲响应是对单位脉冲响应的一种标准化形式。归一化是为了确保响应的幅度或者能量符合特定的标准，例如使最大幅值等于1或者使能量等于1。归一化脉冲响应通常用于比较不同系统的响应特性，或者在实际应用中调整系统的输出幅度。归一化脉冲响应记作 $h_n(t)$，可以通过以下方式得到：
+
+$$h_n(t) = \frac{h(t)}{\max |h(t)|}$$
+
+或者能量归一化形式：
+
+$$h_n(t) = \frac{h(t)}{\sqrt{\int_{-\infty}^{\infty} |h(t)|^2 \, dt}}$$
+
+其中，$\max |h(t)|$ 是 $h(t)$ 的最大绝对值，用于幅度归一化；$\sqrt{\int_{-\infty}^{\infty} |h(t)|^2 \, dt}$ 是 $h(t)$ 的能量，用于能量归一化。
+
+由水声信道的单位脉冲响应和归一化脉冲响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。
 
 <div align="center">
     <img src="./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.jpg" alt="Unit_Impulse_Response.jpg" width="50%" /><img src="./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.jpg" alt="Normalized_Impulse_Response.jpg" width="50%" />
 </div>
 
-距离时延函数是距离时延函数通常定义为信号从一个点传播到另一个点所需的时间。如果信号以恒定速度 \(c\) 传播，那么从点 A 到点 B 的距离时延 \(\tau\) 可以表示为两点间距离 \(d\) 与传播速度 
+距离时延函数是用来描述从一个点到另一个点的信号传播时间，关系到目标定位的准确性，通常用 $\tau(\mathbf{r}, \mathbf{r}_0)$ 来表示，其中 $\mathbf{r}$ 是接收点的位置，而 $\mathbf{r}_0$ 是发射点的位置。
+
+$$\tau(\mathbf{r}, \mathbf{r}_0) = \frac{|\mathbf{r} - \mathbf{r}_0|}{c}$$
+
+这里 $|\mathbf{r} - \mathbf{r}_0|$ 表示发射点和接收点之间的欧几里得距离，$c$ 是声波或电磁波在介质中的传播速度。
 
 <div align="center">
     <img src="./Hydroacoustic_Channel_Calculation/results/Distance_Delay.jpg" alt="Distance_Delay.jpg" width="50%" />
 </div>
 
-误码率信噪比函数。水声通信在不使用其他技术直接传输时，误码率非常高，在仅添加调制、解调技术时误码率也比较高，想要降低误码率还需要再加入均衡、分集、扩频等技术。而且在相同的信噪比条件下，使用4PSK比使用16QAM误码率低，4PSK抗噪声性能更好。
+信噪比（SNR）是衡量信号强度相对于背景噪声强度的指标。它定义为信号功率与噪声功率之比，通常用分贝（dB）表示。
+
+$$\text{SNR} = 10 \log_{10}\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)$$
+
+其中，$P_{\text{signal}}$ 是信号功率，$P_{\text{noise}}$ 是噪声功率。
+
+误码率（BER）是通信系统中接收到的错误位数与总传输位数的比率。误码率可以通过概率密度函数和积分来计算，但具体形式依赖于调制方式和接收机特性。
+
+误码率信噪比函数表达了在不同的信噪比条件下，系统的误码率。这个函数的具体形式依赖于多种因素，如调制方式、信道特性和接收机设计。例如，在使用二进制相位偏移键控（BPSK）的简单情况下，误码率可以表示为：
+
+$$\text{BER} = Q\left(\sqrt{2 \cdot \text{SNR}}\right)$$
+
+其中，$Q(\cdot)$ 是Q函数，用于描述误码率和信噪比之间的关系。对于BPSK，Q函数可以表示为：
+
+$$Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^{\infty} e^{-\frac{u^2}{2}} du$$
+
+水声通信在不使用其他技术直接传输时，误码率非常高，在仅添加调制、解调技术时误码率也比较高，想要降低误码率还需要再加入均衡、分集、扩频等技术。而且在相同的信噪比条件下，使用4PSK比使用16QAM误码率低，4PSK抗噪声性能更好。
 
 <div align="center">
     <img src="./Hydroacoustic_Channel_Calculation/results/BER_SNR.jpg" alt="BER_SNR.jpg" width="50%" />
