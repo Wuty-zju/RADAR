@@ -2,7 +2,6 @@ clc;clear all;close all;
 
 bellhop pekerisTLB
 
-%%´«²¥ËðÊ§ÇúÏßÍ¼
 figure
 plotshd pekerisTLB.shd
 [~,~,~,~,Pos,pressure] = read_shd('pekerisTLB.shd');

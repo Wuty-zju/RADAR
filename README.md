@@ -697,32 +697,23 @@ $$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
 
 [`Hydroacoustic_Channel_Calculation/results`](./Hydroacoustic_Channel_Calculation/results) 包含仿真结果，展示使用 Bellohop 模型产生水声信道，采用相干检测的方法进行PSK、QAM调制解调的仿真结果。
 
-单位冲激响应是当输入信号为单位冲激信号时，系统的输出响应。
+单位冲激响应是当输入信号为单位冲激信号时，系统的输出响应。归一化冲激响应是将单位冲激响应除以其最大值，使其最大值为1。由水声信道的单位冲激响应和归一化冲激响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。
 
 <div align="center">
-    <img src="./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.png" alt="Unit_Impulse_Response.png" width="50%" />
+    <img src="./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.jpg" alt="Unit_Impulse_Response.jpg" width="50%" /><img src="./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.jpg" alt="Normalized_Impulse_Response.jpg" width="50%" />
 </div>
 
-归一化冲激响应是将单位冲激响应除以其最大值，使其最大值为1。
+距离时延函数是距离时延函数通常定义为信号从一个点传播到另一个点所需的时间。如果信号以恒定速度 \(c\) 传播，那么从点 A 到点 B 的距离时延 \(\tau\) 可以表示为两点间距离 \(d\) 与传播速度 
 
 <div align="center">
-    <img src="./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.png" alt="Normalized_Impulse_Response.png" width="50%" />
+    <img src="./Hydroacoustic_Channel_Calculation/results/Distance_Delay.jpg" alt="Distance_Delay.jpg" width="50%" />
 </div>
 
-距离时延函数是单位冲激响应的绝对值平方，表示信号在水声信道中传播的时间延迟。
+误码率信噪比函数。水声通信在不使用其他技术直接传输时，误码率非常高，在仅添加调制、解调技术时误码率也比较高，想要降低误码率还需要再加入均衡、分集、扩频等技术。而且在相同的信噪比条件下，使用4PSK比使用16QAM误码率低，4PSK抗噪声性能更好。
 
 <div align="center">
-    <img src="./Hydroacoustic_Channel_Calculation/results/Distance_Delay.png" alt="Distance_Delay.png" width="50%" />
+    <img src="./Hydroacoustic_Channel_Calculation/results/BER_SNR.jpg" alt="BER_SNR.jpg" width="50%" />
 </div>
-
-误码率信噪比函数
-
-<div align="center">
-    <img src="./Hydroacoustic_Channel_Calculation/results/BER_SNR.png" alt="BER_SNR.png" width="50%" />
-</div>
-
-
-由水声信道的单位冲激响应和归一化冲激响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。水声通信在不使用其他技术直接传输时，误码率非常高，在仅添加调制、解调技术时误码率也比较高，想要降低误码率还需要再加入均衡、分集、扩频等技术。而且在相同的信噪比条件下，使用4PSK比使用16QAM误码率低，4PSK抗噪声性能更好。
 
 ## 检测篇
 
