@@ -3,9 +3,9 @@ N=100000;
 X=randsrc(1,N,[0,1]);
  
 %获得水声信道冲击响应
-filename = './Hydroacoustic_Channel_Calculation/lib/Hydroacoustic_Channel_Calculation.arr'; 
+arr = './Hydroacoustic_Channel_Calculation/lib/Hydroacoustic_Channel_Calculation.arr'; 
 [ amp1, delay1, SrcAngle, RcvrAngle, NumTopBnc, NumBotBnc, narrmat, Pos ]... 
- = read_arrivals_asc(filename);
+ = read_arrivals_asc(arr);
 
 %%单位冲激响应
 [m,n]=size(amp1);

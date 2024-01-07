@@ -1,11 +1,11 @@
 clear
 clc
-filename = './Hydroacoustic_Channel_Calculation/lib/Hydroacoustic_Channel_Calculation.arr';
+arr = './Hydroacoustic_Channel_Calculation/lib/Hydroacoustic_Channel_Calculation.arr';
 Minimum_range=100  %（接收水听器的水平方向上接收范围最小值，m）----R 
 Maximum_range=1000 %（接收水听器的水平方向上接收范围最大值，m）---RB 
 
 [ amp1, delay, SrcAngle, RcvrAngle, NumTopBnc, NumBotBnc, narrmat, Pos ]... 
- = read_arrivals_asc(filename);
+ = read_arrivals_asc(arr);
 
 %%单位冲激响应
 [m,n]=size(amp1);
@@ -49,4 +49,4 @@ grid on
 colorbar
 xlabel('时延(sec)')
 ylabel('Range(m)')
-title(filename)
+title(arr)
