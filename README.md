@@ -687,6 +687,43 @@ $$\chi(0, f_d) = \int_{-\infty}^{+\infty} s(t) s^*(t) e^{-j2\pi f_d t} dt$$
 
 #### 水声信道计算
 
+使用 MATLAB 进行水声信道计算。在 [`Hydroacoustic_Channel_Calculation`](./Hydroacoustic_Channel_Calculation) 中包含用于水声信道计算的 MATLAB 代码和资源。
+
+[`Hydroacoustic_Channel_Calculation/lib`](./Hydroacoustic_Channel_Calculation/lib) 包含 MATLAB 脚本和函数，为水声信道计算提供了必要的工具和函数库。
+
+[`Hydroacoustic_Channel_Calculation`](./Hydroacoustic_Channel_Calculation) 中的 `*.m` 是主要的仿真脚本。[`Bellhop_data.m`](./Hydroacoustic_Channel_Calculation/lib/Bellhop_data.m) Bellohop 模型计算水声信道产生单位冲激响应信号。
+
+仿真条件如下，声源和接收水听器的水平距离 1000m，表面粗糙度的均方根值 2.0m，深度范围（即距海平面的垂直距离） [0 20]，横波声速 [1540 1543]，该层海水密度 [1021 1021]，横波吸收系数 [69.2912 69.4261]，把海底建模为声学弹性半空间，声速不变，密度均匀，忽略底部水体表面的粗糙度，沉积物层深度 20m，沉积物层的声速 2000m/s，泥沙密度 1810 $kg/{m}^3$ ，横波吸收系数 0.5，声波频率 100Hz，声源深度 10m，接收水听器的深度 10m，接收水听器的水平方向上接收范围最小值 100m，接收水听器的水平方向上接收范围最大值：1000m，接收水听器的水平方向上个数 50，波束类型 高斯波束，声线个数 10，第一个声线的到达角度 -15，最后一个声线的到达角度 15。
+
+[`Hydroacoustic_Channel_Calculation/results`](./Hydroacoustic_Channel_Calculation/results) 包含仿真结果，展示使用 Bellohop 模型产生水声信道，采用相干检测的方法进行PSK、QAM调制解调的仿真结果。
+
+单位冲激响应是当输入信号为单位冲激信号时，系统的输出响应。
+
+<div align="center">
+    <img src="./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.png" alt="Unit_Impulse_Response.png" width="50%" />
+</div>
+
+归一化冲激响应是将单位冲激响应除以其最大值，使其最大值为1。
+
+<div align="center">
+    <img src="./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.png" alt="Normalized_Impulse_Response.png" width="50%" />
+</div>
+
+距离时延函数是单位冲激响应的绝对值平方，表示信号在水声信道中传播的时间延迟。
+
+<div align="center">
+    <img src="./Hydroacoustic_Channel_Calculation/results/Distance_Delay.png" alt="Distance_Delay.png" width="50%" />
+</div>
+
+误码率信噪比函数
+
+<div align="center">
+    <img src="./Hydroacoustic_Channel_Calculation/results/BER_SNR.png" alt="BER_SNR.png" width="50%" />
+</div>
+
+
+由水声信道的单位冲激响应和归一化冲激响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。水声通信在不使用其他技术直接传输时，误码率非常高，在仅添加调制、解调技术时误码率也比较高，想要降低误码率还需要再加入均衡、分集、扩频等技术。而且在相同的信噪比条件下，使用4PSK比使用16QAM误码率低，4PSK抗噪声性能更好。
+
 ## 检测篇
 
 ### 要求
