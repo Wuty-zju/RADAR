@@ -745,13 +745,13 @@ $$h_n(t) = \frac{h(t)}{\sqrt{\int_{-\infty}^{\infty} |h(t)|^2 dt}}$$
 
 其中， $\max |h(t)|$ 是 $h(t)$ 的最大绝对值，用于幅度归一化； $\sqrt{\int_{-\infty}^{\infty} |h(t)|^2 dt}$ 是 $h(t)$ 的能量，用于能量归一化。
 
-由水声信道的单位脉冲响应和归一化脉冲响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。
+[`Unit_Impulse_Response`](./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.jpg) [`Normalized_Impulse_Response`](./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.jpg) 由水声信道的单位脉冲响应和归一化脉冲响应，可以看出水声信道的距离时延以及衰减情况。在距离改变时会出现多径效应，会使接收端接收到的信号产生畸变。
 
 <div align="center">
     <img src="./Hydroacoustic_Channel_Calculation/results/Unit_Impulse_Response.jpg" alt="Unit_Impulse_Response.jpg" width="50%" /><img src="./Hydroacoustic_Channel_Calculation/results/Normalized_Impulse_Response.jpg" alt="Normalized_Impulse_Response.jpg" width="50%" />
 </div>
 
-距离时延函数是用来描述从一个点到另一个点的信号传播时间，关系到目标定位的准确性，通常用 $\tau(\mathbf{r}, \mathbf{r}_0)$ 来表示，其中 $\mathbf{r}$ 是接收点的位置，而 $\mathbf{r}_0$ 是发射点的位置。
+[`Distance_Delay`](./Hydroacoustic_Channel_Calculation/results/Distance_Delay.jpg) 距离时延函数是用来描述从一个点到另一个点的信号传播时间，关系到目标定位的准确性，通常用 $\tau(\mathbf{r}, \mathbf{r}_0)$ 来表示，其中 $\mathbf{r}$ 是接收点的位置，而 $\mathbf{r}_0$ 是发射点的位置。
 
 $$\tau(\mathbf{r}, \mathbf{r}_0) = \frac{|\mathbf{r} - \mathbf{r}_0|}{c}$$
 
@@ -769,7 +769,7 @@ $$\text{SNR} = 10 \log_{10}\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\righ
 
 误码率（BER）是通信系统中接收到的错误位数与总传输位数的比率。误码率可以通过概率密度函数和积分来计算，但具体形式依赖于调制方式和接收机特性。
 
-误码率信噪比函数表达了在不同的信噪比条件下，系统的误码率。这个函数的具体形式依赖于多种因素，如调制方式、信道特性和接收机设计。例如，在使用二进制相位偏移键控（BPSK）的简单情况下，误码率可以表示为：
+[`BER_SNR`](./Hydroacoustic_Channel_Calculation/results/BER_SNR.jpg) 误码率信噪比函数表达了在不同的信噪比条件下，系统的误码率。这个函数的具体形式依赖于多种因素，如调制方式、信道特性和接收机设计。例如，在使用二进制相位偏移键控（BPSK）的简单情况下，误码率可以表示为：
 
 $$\text{BER} = Q\left(\sqrt{2 \cdot \text{SNR}}\right)$$
 
@@ -901,6 +901,41 @@ $$
 $$\frac{p(x|H_1)}{p(x|H_0)} \ \underset{H_0}{\overset{H_1}{\gtrless}} \ \mu$$
 
 因此，恒虚警检测是 $P(H_1)(c_{01} - c_{11}) = P(H_0)(c_{10} - c_{00}) = \mu$ 时，贝叶斯检测的特例。
+
+#### 接收机工作特性曲线 ROC
+
+接收机工作特性曲线（ROC）是评估接收机检测性能的一个工具。ROC曲线显示了在不同的信号噪声比（SNR）条件下，检测器的真正报警概率（$\text{Pd}$）与虚假报警概率（$\text{Pfa}$）之间的关系。每一点对应一个特定的检测阈值，曲线越接近左上角，表示接收机性能越好。
+
+$$\text{Pd} = Q\left( \frac{Q^{-1}(\text{Pfa}) - \sqrt{\text{SNR}}}{\sqrt{2}} \right)$$
+
+其中， $Q(\cdot)$ 是 Q 函数，描述在标准正态分布中变量超过某个值的概率。 $Q^{-1}(\cdot)$ 是 Q 函数的逆函数。 $\text{SNR}$ 是信噪比。
+
+<div align="center">
+    <img src="./Report/lib/Receiver_ROC_in_Gaussian_distribution.png" alt="Receiver_ROC_in_Gaussian_distribution.png" width="50%" />
+</div>
+
+#### 检测阈 DT
+
+检测阈 DT 用来判断一个信号是否存在，通常是基于噪声水平和所需的假警率来确定的。
+
+$$DT = \sigma \cdot Q^{-1}(P_{FA})$$
+
+其中 $Q^{-1}$ 是高斯分布的逆累积分布函数， $P_{FA}$ 是给定的假警率。
+
+主动、被动、通信三类声纳的相干与非相干检测器的检测阈 DT 有对应关系。
+
+<div align="center">
+
+| 声纳类型 | 信号类型 | 检测阈 DT | 检测器类型 | 检测器性质 |
+|:----------------:|:-----------------:|:---------------------------------------:|:--------------------:|:---------------:|
+| 主动声纳 | 宽带 | $DT = 5\lg d - 10\lg BT$ | 匹配滤波器 | 相干检测器 |
+| 主动声纳 | 窄带（仅 CW 脉冲）| $DT = 5\lg d - 5\lg T + 5\lg B$ | 窄带能量检测器 | 非相干检测器 |
+| 被动声纳 | 宽带 | $DT = 5\lg d - 5\lg BT$ | 宽带能量检测器 | 非相干检测器 |
+| 被动声纳 | 窄带 | $DT = 5\lg d - 5\lg T + 5\lg B$ | 窄带能量检测器 | 非相干检测器 |
+| 通信被动声纳 | 宽带 | $\displaystyle DT = 5\lg d - 10\lg BT$ | 匹配检测器 | 相干检测器 |
+
+</div>
+
 
 ## 估计篇
 
