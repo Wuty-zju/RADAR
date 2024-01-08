@@ -1057,19 +1057,39 @@ $$Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$$
 
 ##### 常规波束形成 CBF
 
+常规波束形成器（CBF）通过加权相加阵列中的信号，强化特定方向上的信号。
+
+$$D_{\text{CBF}}(\theta) = \mathbf{e}^H \mathbf{R} \mathbf{e}$$
+
+其中 $\mathbf{e}$ 是由阵列的几何结构决定的导向矢量， $\mathbf{R}$ 是接收信号的协方差矩阵。
+
 ##### 最小无失真响应 MVDR
+
+MVDR 波束形成器旨在保持对期望信号方向上的增益，同时抑制噪声和干扰。
+
+$$\mathbf{w}_{\text{MVDR}}(\theta) = \frac{\mathbf{R}^{-1} \mathbf{e}}{\mathbf{e}^H \mathbf{R}^{-1} \mathbf{e}}$$
+
+$\mathbf{w}_{\text{MVDR}}$ 是波束形成的权重向量。
 
 ##### 多信号分类 MUSIC
 
-##### 旋转不变子空间 ESPRIT
+MUSIC 算法利用信号子空间的特性进行方向估计。
+
+$$P_{\text{MUSIC}}(\theta) = \frac{1}{\mathbf{a}^*(\theta) \mathbf{E}_n \mathbf{E}_n^* \mathbf{a}(\theta)}$$
+
+其中 $\mathbf{E}_n$ 是噪声子空间的正交基， $\mathbf{a}(\theta)$ 是方向向量。
+
+#### 旋转不变子空间 ESPRIT
+
+ESPRIT 利用阵列传感器之间的几何关系来估计信号的参数，不需要方向向量的显式计算。
 
 #### 阵列协方差矩阵
 
-##### 阵列协方差矩阵的本征分解
+##### 本征分解
 
-##### 阵列协方差矩阵的奇异值分解
+##### 奇异值分解
 
-##### 阵列协方差矩阵的 LU 分解
+##### LU 分解
 
 ### 仿真
 
