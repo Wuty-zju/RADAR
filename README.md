@@ -998,9 +998,84 @@ $$\frac{\partial \ln p(x | \theta)}{\partial \theta} \Bigg|_{\theta = \hat{\thet
 
 MAP 和 MLE 都是参数估计方法，它们都使用观测数据来估计模型参数。在参数的先验分布是均匀的特殊情况下， MAP 估计等同于 MLE 。 MAP 考虑了参数的先验概率分布，而 MLE 不考虑先验知识。 MLE 仅仅最大化似然函数，而 MAP 最大化的是后验概率，即先验概率与似然函数的乘积。 MAP 更适用于先验信息已知的情况，而 MLE 适用于没有任何先验知识的情况。
 
-#### 距离估计的声纳与雷达参数 CRB
+#### 声纳与雷达参数 CRB
 
+在声纳与雷达技术中，CRB（克拉美-罗界，Cramér-Rao Bound）为估计问题提供了方差的理论下限。CRB 特别适用于估计问题，如距离估计和速度估计等。
 
+在统计估计理论中，一个估计量的无偏性是指它的期望值等于真实参数值。无偏性可以用以下方式表达：
+
+$$
+b(\theta) = \left\{
+\begin{array}{ll}
+0, & \text{Unbiased} \\
+\neq 0, & \text{Biased}
+\end{array}
+\right.
+$$
+
+估计量的有效性是指在所有无偏估计量中具有最小方差的估计量。对于两个无偏估计量 $\hat{\theta}_1$ 和 $\hat{\theta}_2$ ，如果 $Var(\hat{\theta}_1) < Var(\hat{\theta}_2)$ ，则称 $\hat{\theta}_1$ 比 $\hat{\theta}_2$ 更有效。
+
+CRB 定义了任何无偏估计量方差的下限。如果一个估计量是无偏的，则它的期望值等于真实的参数值 $\theta$ 。CRB 是基于概率密度函数 $p(x;\theta)$ 的 Fisher 信息量 $I(\theta)$ 计算的。
+
+对于无偏估计量 $\hat{\theta}$ ，其方差满足 CRB 不等式：
+
+$$Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$$
+
+其中， $I(\theta)$ 是 Fisher 信息量，定义为：
+
+$$I(\theta) = -E\left[\frac{\partial^2 \ln p(x;\theta)}{\partial \theta^2}\right]$$
+
+其中 $p(x;\theta)$ 是参数 $\theta$ 下观测数据 $x$ 的概率密度函数。
+
+当 $\frac{\partial \ln p(x;\theta)}{\partial \theta} = I(\theta)(g(x) - \theta)$ 时，可以得到方差达到CRB下限的无偏估计量 $\hat{\theta} = g(x)$，其方差为：
+
+$$Var(\hat{\theta}) = \frac{1}{I(\theta)}$$
+
+##### 距离估计的 CRB
+
+对于复杂信号波形，时延估计方差 \( Var(\tau) \) 与距离估计方差 \( Var(d) \) 密切相关，因为时延可以通过声速 \( c \) 转换成距离：
+
+$$d = c \tau$$
+
+因此，时延估计的 CRB 可以直接用于距离估计的 CRB。
+
+##### 速度估计的 CRB
+
+速度估计常通过观测多普勒频移 \( f_d \) 来进行，其 CRB 可以表示为：
+
+$$Var(v) \geq \frac{c^2}{4 \pi^2 f_0^2 T^2 SNR}$$
+
+其中 \( c \) 是声速，\( f_0 \) 是载频，\( T \) 是观测时间，\( SNR \) 是信噪比。
+
+##### 方位估计的 CRB
+
+方位估计的 CRB 取决于阵列的几何结构和接收信号的相干性。在空间滤波器（空间滤波）和波达角估计（DOA）中，CRB 可以用来确定方位估计的精度下限。CRB 的基本形式为：
+
+$$Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$$
+
+其中 \( I(\theta) \) 是 Fisher 信息量，对于概率密度函数 \( p(x;\theta) \) ，它定义为：
+
+$$I(\theta) = -E\left[\frac{\partial^2 \ln p(x;\theta)}{\partial \theta^2}\right]$$
+
+当满足正则条件 \( E\left[\frac{\partial \ln p(x;\theta)}{\partial \theta}\right] = 0 \) 时，任何无偏估计量的方差都不会低于上述的 CRB。
+
+#### 阵列波束形成
+
+##### 均匀直线阵的常规波束形成 CBF
+
+##### 最小无失真响应 MVDR
+
+##### 多信号分类 MUSIC
+
+##### 旋转不变子空间 ESPRIT
+
+#### 阵列协方差矩阵
+
+##### 阵列协方差矩阵的本征分解
+
+##### 阵列协方差矩阵的奇异值分解
+
+##### 阵列协方差矩阵的 LU 分解
 
 ## 应用篇
 
