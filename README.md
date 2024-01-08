@@ -178,7 +178,7 @@ $$ c(z) = c_0 + a(z - z_0) + b(z - z_0)^2 + \ldots $$
 
 其中， $c(z)$ 是深度 $z$ 处的声速， $c_0$ 是参考深度 $z_0$ 处的声速， $a$ 和 $b$ 是系数，表示声速随深度变化的趋势。
 
-使用 plotssp( ) 函数绘制浅海的声速剖面。
+使用 plotssp 函数绘制浅海的声速剖面。
 
 <div align="center">
     <img src="./Sound_Field_Caculation/results/env_Sound_Speed.jpg" alt="env_Sound_Speed.jpg" width="50%" />
