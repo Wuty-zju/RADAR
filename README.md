@@ -988,7 +988,7 @@ $$\hat{\theta}_{\text{map}} = \underset{\theta}{\arg\max} \ p(\theta | x)$$
 
 $$\hat{\theta}_{\text{ml}} = \underset{\theta}{\arg\max} p(x | \theta)$$
 
-求解 $\hat{\theta}_{ml}$ 涉及对似然函数取对数并求导，然后在 ${\theta = \hat{\theta}_{ml}}$ 令导数等于零来解决。
+求解 $\hat{\theta}_{\text{ml}}$ 涉及对似然函数取对数并求导，然后在 $\theta = \hat{\theta}_{\text{ml}}$ 令导数等于零来解决。
 
 $$\frac{\partial p(x | \theta)}{\partial \theta} = 0$$
 
