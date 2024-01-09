@@ -1074,7 +1074,7 @@ $\mathbf{w}$ 是由最小化接收信号方差而得到的最优权重向量， 
 
 MUSIC 算法利用信号子空间和噪声子空间的正交特性来估计信号的方向。其定义公式为：
 
-$$P_{\text{MUSIC}}(\theta) = ({\mathbf{a}^*(\theta) \mathbf{E}_n \mathbf{E}_n^* \mathbf{a}(\theta)})^{-1}$$
+$$P_{\text{MUSIC}}(\theta) = ({\mathbf{a}(\theta) \mathbf{E}_n \mathbf{E}_n \mathbf{a}(\theta)})^{-1}$$
 
 其中 $\mathbf{E}_n$ 是噪声子空间的正交基， $\mathbf{a}(\theta)$ 是方向向量。MUSIC 方法通过分析信号协方差矩阵的特征向量来区分信号子空间和噪声子空间，从而估计信号的到达方向。
 
