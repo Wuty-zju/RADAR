@@ -1096,6 +1096,14 @@ $$R = E[XX^H]$$
 
 ### 仿真
 
+Beamforming 在 MATLAB 进行阵列波束形成的仿真。在 [`Beamforming`](./Beamforming) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+
+[`Beamforming/lib`](./Beamforming/lib) 包含多个 MATLAB 脚本和函数库，提供了进行阵列波束形成所需的计算工具。其中的脚本，如 `calculate_weights.m` 用于计算波束形成的权重， `apply_weights.m` 用于应用权重到接收信号，[`beamform.m`](./Beamforming/lib/beamform.m) 是阵列波束形成的核心函数。
+
+[`Beamforming`](./Beamforming) 中的 `main.m` 是仿真的主要脚本。它调用了 `calculate_weights.m` 和 `apply_weights.m` 函数，实现了阵列波束形成的仿真计算。
+
+[`Beamforming/results`](./Beamforming/results) 包含仿真结果，展示了波束形成后的信号增强效果和抑制干扰的能力。
+
 ## 应用篇
 
 ### 要求
