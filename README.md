@@ -978,7 +978,7 @@ $$DT = 5 \lg d - 10 \lg BT = -13.49 \text{dB}$$
 
 最大后验估计 MAP 是在给定观测数据的条件下，对参数的概率分布进行估计的方法。它不仅考虑了数据的可能性，还结合了参数的先验分布。 MAP 估计是通过最大化后验概率 $p(\theta | x)$ 来找到参数 $\theta$ 的估计值 $\hat{\theta}_{\text{map}}$ 。
 
-$$\hat{\theta}_{\text{map}} = \arg \max_{\theta} \ p(\theta | x)$$
+$$\hat{\theta}_{\text{map}} = \underset{\theta}{\arg\max} \ p(\theta | x)$$
 
 在联合高斯分布下， MAP 估计等价于最小均方误差估计 MMSE 。
 
@@ -986,13 +986,13 @@ $$\hat{\theta}_{\text{map}} = \arg \max_{\theta} \ p(\theta | x)$$
 
 最大似然估计 MLE 用于估计未知的非随机参数。它的定义是使似然函数 $p(x | \theta)$ 最大的 $\theta$ 值作为估计量的方法。基本原理是，对于一个选定的 $\theta$，考虑 $x$ 落在一个小区域内的概率 $p(x | \theta) dx $，取 $p(x | \theta) dx$ 最大的那个 $\theta$ 作为估计量 $\hat{\theta}_{\text{ml}}$。
 
-$$\hat{\theta}_{\text{ml}} = \arg \max_{\theta} p(x | \theta)$$
+$$\hat{\theta}_{\text{ml}} = \underset{\theta}{\arg\max} p(x | \theta)$$
 
 求解 $\hat{\theta}_{\text{ml}}$ 涉及对似然函数取对数并求导，然后令导数等于零来解决。
 
-$$\frac{\partial p(x | \theta)}{\partial \theta} \bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
+$$\left.\frac{\partial p(x | \theta)}{\partial \theta}\right|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
 
-$$\frac{\partial \ln p(x | \theta)}{\partial \theta} \bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
+$$\left.\frac{\partial \ln p(x | \theta)}{\partial \theta}\right|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
 
 如果假设 $\theta$ 为均匀分布，则最大后验概率估计转化为最大似然估计。
 
