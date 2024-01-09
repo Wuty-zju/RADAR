@@ -1090,7 +1090,7 @@ $$R = E[XX^H]$$
 
 ### 仿真
 
-Beamforming 在 MATLAB 进行阵列波束形成的仿真。在 [`Beamforming`](./Beamforming) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+在 MATLAB 进行阵列波束形成的仿真。在 [`Beamforming`](./Beamforming) 文件夹中包含用于仿真的 MATLAB 代码和资源。
 
 [`Beamforming/lib`](./Beamforming/lib) 包含多个 MATLAB 脚本和函数库，提供了四种进行阵列波束形成的算法脚本。其中 [`CBF_simulation.m`](./Beamforming/lib/CBF_simulation.m) 用于进行传统波束形成 CBF 的仿真， [`MVDR_simulation.m`](./Beamforming/lib/MVDR_simulation.m) 用于进行最小方差无失真响应 MVDR 波束形成的仿真， [`MUSIC_simulation.m`](./Beamforming/lib/MUSIC_simulation.m) 用于进行多信号分类 MUSIC 波束形成的仿真， [`ESPRIT_simulation.m`](./Beamforming/lib/ESPRIT_simulation.m) 用于进行旋转不变子空间 ESPRIT 波束形成的仿真。
 
