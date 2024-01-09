@@ -1098,11 +1098,35 @@ $$R = E[XX^H]$$
 
 Beamforming 在 MATLAB 进行阵列波束形成的仿真。在 [`Beamforming`](./Beamforming) 文件夹中包含用于仿真的 MATLAB 代码和资源。
 
-[`Beamforming/lib`](./Beamforming/lib) 包含多个 MATLAB 脚本和函数库，提供了进行阵列波束形成所需的计算工具。其中的脚本，如 `calculate_weights.m` 用于计算波束形成的权重， `apply_weights.m` 用于应用权重到接收信号，[`beamform.m`](./Beamforming/lib/beamform.m) 是阵列波束形成的核心函数。
+[`Beamforming/lib`](./Beamforming/lib) 包含多个 MATLAB 脚本和函数库，提供了四种进行阵列波束形成的算法脚本。其中 [`CBF_simulation.m`](./Beamforming/lib/CBF_simulation.m) 用于进行传统波束形成 CBF 的仿真， [`MVDR_simulation.m`](./Beamforming/lib/MVDR_simulation.m) 用于进行最小方差无失真响应 MVDR 波束形成的仿真， [`MUSIC_simulation.m`](./Beamforming/lib/MUSIC_simulation.m) 用于进行多信号分类 MUSIC 波束形成的仿真， [`ESPRIT_simulation.m`](./Beamforming/lib/ESPRIT_simulation.m) 用于进行旋转不变子空间 ESPRIT 波束形成的仿真。
 
-[`Beamforming`](./Beamforming) 中的 `main.m` 是仿真的主要脚本。它调用了 `calculate_weights.m` 和 `apply_weights.m` 函数，实现了阵列波束形成的仿真计算。
+[`Beamforming`](./Beamforming) 中的 `*.m` 是仿真的主要脚本。 [`Beamforming.m`](./Beamforming/Beamforming.m) 调用 [`CBF_simulation.m`](./Beamforming/lib/CBF_simulation.m) [`MVDR_simulation.m`](./Beamforming/lib/MVDR_simulation.m) [`MUSIC_simulation.m`](./Beamforming/lib/MUSIC_simulation.m) [`ESPRIT_simulation.m`](./Beamforming/lib/ESPRIT_simulation.m) 进行传统波束形成 CBF 、最小方差无失真响应 MVDR 、多信号分类 MUSIC 、旋转不变子空间 ESPRIT 四种波束形成方法的仿真并对仿真结果进行绘图。
 
-[`Beamforming/results`](./Beamforming/results) 包含仿真结果，展示了波束形成后的信号增强效果和抑制干扰的能力。
+[`Beamforming/results`](./Beamforming/results) 包含传统波束形成 CBF 、最小方差无失真响应 MVDR 、多信号分类 MUSIC 、旋转不变子空间 ESPRIT 四种波束形成方法的绘图。
+
+[`CBF_simulation.png`](./Beamforming/results/CBF_simulation.png) 是传统波束形成 CBF 的仿真结果。
+
+<div align="center">
+    <img src="./Beamforming/results/CBF_simulation.png" alt="CBF_simulation.png" width="50%" />
+</div>
+
+[`MVDR_simulation.png`](./Beamforming/results/MVDR_simulation.png) 是最小方差无失真响应 MVDR 波束形成的仿真结果。
+
+<div align="center">
+    <img src="./Beamforming/results/MVDR_simulation.png" alt="MVDR_simulation.png" width="50%" />
+</div>
+
+[`MUSIC_simulation.png`](./Beamforming/results/MUSIC_simulation.png) 是多信号分类 MUSIC 波束形成的仿真结果。
+
+<div align="center">
+    <img src="./Beamforming/results/MUSIC_simulation.png" alt="MUSIC_simulation.png" width="50%" />
+</div>
+
+[`ESPRIT_simulation.png`](./Beamforming/results/ESPRIT_simulation.png) 是旋转不变子空间 ESPRIT 波束形成的仿真结果。
+
+<div align="center">
+    <img src="./Beamforming/results/ESPRIT_simulation.png" alt="ESPRIT_simulation.png" width="50%" />
+</div>
 
 ## 应用篇
 
