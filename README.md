@@ -976,9 +976,9 @@ $$DT = 5 \lg d - 10 \lg BT = -13.49 \text{dB}$$
 
 #### 最大后验估计 MAP
 
-最大后验估计 MAP 是在给定观测数据的条件下，对参数的概率分布进行估计的方法。它不仅考虑了数据的可能性，还结合了参数的先验分布。 MAP 估计是通过最大化后验概率 $p(\theta | x)$ 来找到参数 $\theta$ 的估计值 $\hat{\theta}_{\text{map}}$。
+最大后验估计 MAP 是在给定观测数据的条件下，对参数的概率分布进行估计的方法。它不仅考虑了数据的可能性，还结合了参数的先验分布。 MAP 估计是通过最大化后验概率 $p(\theta | x)$ 来找到参数 $\theta$ 的估计值 $\hat{\theta}_{\text{map}}$ 。
 
-$$\hat{\theta}_{\text{map}} = \arg \max_{\theta} p(\theta | x)$$
+$$\hat{\theta}_{\text{map}} = \underset{\theta}{\arg\max} \, p(\theta | x)$$
 
 在联合高斯分布下， MAP 估计等价于最小均方误差估计 MMSE 。
 
@@ -990,9 +990,9 @@ $$\hat{\theta}_{\text{ml}} = \arg \max_{\theta} p(x | \theta)$$
 
 求解 $\hat{\theta}_{\text{ml}}$ 涉及对似然函数取对数并求导，然后令导数等于零来解决。
 
-$$\frac{\partial p(x | \theta)}{\partial \theta} \Bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
+$$\frac{\partial p(x | \theta)}{\partial \theta} \bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
 
-$$\frac{\partial \ln p(x | \theta)}{\partial \theta} \Bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
+$$\frac{\partial \ln p(x | \theta)}{\partial \theta} \bigg|_{\theta = \hat{\theta}_{\text{ml}}} = 0$$
 
 如果假设 $\theta$ 为均匀分布，则最大后验概率估计转化为最大似然估计。
 
@@ -1000,7 +1000,7 @@ MAP 和 MLE 都是参数估计方法，它们都使用观测数据来估计模�
 
 #### 声纳与雷达参数 CRB
 
-在声纳与雷达技术中，CRB（克拉美-罗界，Cramér-Rao Bound）为估计问题提供了方差的理论下限。CRB 特别适用于估计问题，如距离估计和速度估计等。
+在声纳与雷达技术中，克拉美-罗界（Cramér-Rao Bound）为估计问题提供了方差的理论下限。CRB 特别适用于估计问题，如距离估计和速度估计等。
 
 在统计估计理论中，一个估计量的无偏性是指它的期望值等于真实参数值。无偏性可以用以下方式表达：
 
