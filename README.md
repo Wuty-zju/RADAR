@@ -990,9 +990,7 @@ $$\hat{\theta}_{\text{ml}} = \underset{\theta}{\arg\max} p(x | \theta)$$
 
 求解 $\hat{\theta}_{\text{ml}}$ 涉及对似然函数取对数并求导，然后令导数等于零来解决。
 
-$$\frac{\partial p(x | \theta)}{\partial \theta} = 0$$
-
-$$\frac{\partial \ln p(x | \theta)}{\partial \theta} = 0$$
+$$\frac{\partial p(x | \theta)}{\partial \theta} = 0 \ \ \ \ \frac{\partial \ln p(x | \theta)}{\partial \theta} = 0$$
 
 如果假设 $\theta$ 为均匀分布，则最大后验概率估计转化为最大似然估计。
 
