@@ -25,7 +25,7 @@ X = awgn(X, 10); % 添加白高斯噪声，SNR=10dB
 Rhat = X * X' / N; % 协方差矩阵估计
 RhaT = Rhat^-1; % 求逆
 
-% Capon 法
+% MVDR 法
 for i = 1:length(theta_p)
     atheta_p = exp(-j * 2 * pi * d * sin(theta_p(i) / 180 * pi) * (0:M-1) / lamda);
     p2(i) = abs(1 / (atheta_p * RhaT * atheta_p'));
@@ -33,6 +33,7 @@ end
 P2 = 10 * log10(p2 / max(p2));
 
 % 绘制图形
+figure();
 plot(theta_p, P2, 'b', 'linewidth', 1);
 title('最小无失真响应 MVDR');
 xlabel('方向角/（\circ）');

@@ -32,6 +32,7 @@ end
 P1 = 10 * log10(p1 / max(p1));
 
 % 绘制图形
+figure();
 plot(theta_p, P1, 'k', 'linewidth', 1);
 title('常规波束形成 CBF');
 xlabel('方向角/（\circ）');

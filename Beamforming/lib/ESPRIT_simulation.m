@@ -36,6 +36,7 @@ phi_p=diag(lamdaphi);
 theta_p=asind(phase(phi_p)*lamda/(2*pi*abs(delta)));
 
 %使用stem绘制散点图
+figure();
 y=[1 1];
 stem(theta_p,y,'linewidth',1);
 xlim([-100,100]);

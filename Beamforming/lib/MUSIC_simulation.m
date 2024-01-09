@@ -36,6 +36,7 @@ end
 P3 = 10 * log10(p3 / max(p3));
 
 % 绘制图形
+figure();
 plot(theta_p, P3, 'r', 'linewidth', 1);
 title('多信号分类 MUSIC');
 xlabel('方向角/（\circ）');
