@@ -1183,8 +1183,6 @@ FOM &\leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T \\
 \end{align*}
 $$
 
-在这个格式中，每个等式都在新的一行，并且等号（=）和小于等于号（≤）都对齐了，这样做可以提高阅读的清晰度。
-
 $$TL = 20 \log R + \alpha R = 85 \text{dB}$$
 
 解得 $R = 7.5 \text{km}$
@@ -1252,8 +1250,6 @@ DT = 5 \lg d - 10 \lg B - 10 \lg T$ = 5 \lg 25 - 10 \lg 4000 - 10 \lg 0.01 = 7 -
 $$SL - TL - (NL - DI) \geq DT$$
 
 计算声纳的作用距离
-
-Certainly! I'll reformat the equation you provided into a version with line breaks and aligned equal signs. Here's how it would look:
 
 $$
 \begin{align*}
