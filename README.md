@@ -1174,9 +1174,7 @@ $$SL - TL - (NL - DI) \geq DT$$
 
 计算声纳的作用距离
 
-$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T = SL - NL + DI - 5 \log d - 5 \log B + 5 \log T$$  
-
-$$FOM \leq 190 - 70 + 0 - 7 - 18 - 10 = 85 \text{dB}$$  
+$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T = SL - NL + DI - 5 \log d - 5 \log B + 5 \log T \leq 190 - 70 + 0 - 7 - 18 - 10 = 85 \text{dB}$$  
 
 $$TL = 20 \log R + \alpha R = 85 \text{dB}$$
 
@@ -1246,9 +1244,7 @@ $$SL - TL - (NL - DI) \geq DT$$
 
 计算声纳的作用距离
 
-$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T = SL - NL + DI - 5 \log d + 10 \log T$$  
-
-$$FOM \leq 190 - 70 + 0 - 7 - 20 = 93 \text{dB}$$  
+$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T = SL - NL + DI - 5 \log d + 10 \log T \leq 190 - 70 + 0 - 7 - 20 = 93 \text{dB}$$  
 
 $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
