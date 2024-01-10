@@ -1224,7 +1224,6 @@ $$DT = 5\lg d - 5\lg BT$$
 
 与采用宽带能量检测器的被动声纳检测阈相同。注意：这种情况的主动声纳基本不用，但对于通信声纳很有用，采用窄带能量检测器的通信声纳基本不用。
 
-
 无指向性通信声纳系统，信号声源级 $SL = 190 \text{dB}$，带宽 $B = 4000 \text{Hz}$，脉宽 $T = 0.01 \text{s}$，环境噪声级 $NL = 70 \text{dB}$，指向性指数 $DI = 0 \text{dB}$，声吸收 $\alpha = 1 \text{dB/km}$，球面波阵面几何扩展损失 $20\lg R$，该声纳作用距离可由如下方法求解。
 
 计算检测阈值 $DT$
@@ -1245,15 +1244,25 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 解得 $R = 11.6 \text{km}$
 
-无指向性被动声纳系统，目标声源级SL=190dB，带宽B=4000Hz， 脉宽0.01s，环境噪声级NL=70dB，指向性指数DI=0dB，声吸收α=1dB/km， 球面波阵面几何扩展损失20lgR，该声纳作用距离计算如下
+无指向性被动声纳系统，信号声源级 $SL = 190 \text{dB}$，带宽 $B = 4000 \text{Hz}$，脉宽 $T = 0.01 \text{s}$，环境噪声级 $NL = 70 \text{dB}$，指向性指数 $DI = 0 \text{dB}$，声吸收 $\alpha = 1 \text{dB/km}$，球面波阵面几何扩展损失 $20\lg R$，该声纳作用距离可由如下方法求解。
 
-DT=5lgd-5lgB-5lgT被动B=4000Hz,T=0.01s
+计算检测阈值 $DT$
 
-DT=5lg25-5lg4000-5lg0.01=7-18+10=-1dB
+$$DT = 5 \lg d - 5 \lg B - 5 \lg T = 5 \lg 25 - 5 \lg 4000 - 5 \lg 0.01 = 7 - 18 + 10 = -1 \text{dB}$$
 
-SL-TL-(NL-DI)>=DT
+声纳方程
 
-FOM<=SL-(NL+10lgB-DI)-5lgd+5lgB+5lgT=SL-NL+DI-5lgd-5lgB+5lgT • FOM<=190-70+0-7-18-10=85dB, TL=20lgR+aR=85->R=7.5km
+$$SL - TL - (NL - DI) \geq DT$$
+
+计算声纳的作用距离
+
+$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T = SL - NL + DI - 5 \log d - 5 \log B + 5 \log T$$  
+
+$$FOM \leq 190 - 70 + 0 - 7 - 18 - 10 = 85 \text{dB}$$  
+
+$$TL = 20 \log R + \alpha R = 85 \text{dB}$$
+
+解得 $R = 7.5 \text{km}$
 
 ## 总结篇
 
