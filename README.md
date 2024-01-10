@@ -1174,7 +1174,16 @@ $$SL - TL - (NL - DI) \geq DT$$
 
 计算声纳的作用距离
 
-$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T = SL - NL + DI - 5 \log d - 5 \log B + 5 \log T \leq 190 - 70 + 0 - 7 - 18 - 10 = 85 \text{dB}$$  
+$$
+\begin{align*}
+FOM &\leq SL - (NL + 10 \log B - DI) - 5 \log d + 5 \log B + 5 \log T \\
+    &= SL - NL + DI - 5 \log d - 5 \log B + 5 \log T \\
+    &= 190 - 70 + 0 - 7 - 18 - 10 \\
+    &= 85 \text{dB}
+\end{align*}
+$$
+
+在这个格式中，每个等式都在新的一行，并且等号（=）和小于等于号（≤）都对齐了，这样做可以提高阅读的清晰度。
 
 $$TL = 20 \log R + \alpha R = 85 \text{dB}$$
 
@@ -1244,7 +1253,16 @@ $$SL - TL - (NL - DI) \geq DT$$
 
 计算声纳的作用距离
 
-$$FOM \leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T = SL - NL + DI - 5 \log d + 10 \log T \leq 190 - 70 + 0 - 7 - 20 \leq 93 \text{dB}$$  
+Certainly! I'll reformat the equation you provided into a version with line breaks and aligned equal signs. Here's how it would look:
+
+$$
+\begin{align*}
+FOM &\leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T \\
+    &= SL - NL + DI - 5 \log d + 10 \log T \\
+    &= 190 - 70 + 0 - 7 - 20 \\
+    &= 93 \text{dB}
+\end{align*}
+$$
 
 $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
