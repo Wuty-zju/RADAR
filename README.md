@@ -876,11 +876,11 @@ $$p(x|H_1) \ \underset{H_0}{\overset{H_1}{\gtrless}} \ \ p(x|H_0)$$
 
 #### 最大后验概率检测 MAP
 
-当代价因子满足 $(c_{10} - c_{11}) = (c_{01} - c_{00})$ 时，判决准则变为：
+当代价因子满足 $c_{10} - c_{11} = c_{01} - c_{00}$ 时，判决准则变为：
 
 $$p(H_1|x) \ \underset{H_0}{\overset{H_1}{\gtrless}} \ \ p(H_0|x)$$
 
-$P(H_1|x)$ 为 $x$ 已知的条件下，假设 $H_1$ 和 $H_1$ 成立的概率，即最大后验概率检测为 $(c_{10} - c_{11}) = (c_{01} - c_{00})$ 时贝叶斯检测的特例。
+$P(H_1|x)$ 为 $x$ 已知的条件下，假设 $H_1$ 和 $H_1$ 成立的概率，即最大后验概率检测为 $c_{10} - c_{11} = c_{01} - c_{00}$ 时贝叶斯检测的特例。
 
 #### 恒虚警检测 CFAR
 
@@ -922,11 +922,11 @@ $$DT = \sigma \cdot Q^{-1}(P_{fa})$$
 
 其中 $Q^{-1}$ 是高斯分布的逆累积分布函数， $P_{fa}$ 是给定的假警率。
 
-主动、被动、通信三类声纳的相干与非相干检测器的检测阈 DT 有对应关系。
+主动、被动、通信三类声纳的相干与非相干检测器的检测阈 $DT$ 有对应关系。
 
 <div align="center">
 
-| 声纳类型 | 信号类型 | 检测阈 DT | 检测器类型 | 检测器性质 |
+| 声纳类型 | 信号类型 | 检测阈 $DT$ | 检测器类型 | 检测器性质 |
 |:----------------:|:-----------------:|:---------------------------------------:|:--------------------:|:---------------:|
 | 主动声纳 | 宽带 | $DT = 5\lg d - 10\lg BT$ | 匹配滤波器 | 相干检测器 |
 | 主动声纳 | 窄带（仅 CW 脉冲）| $DT = 5\lg d - 5\lg T + 5\lg B$ | 窄带能量检测器 | 非相干检测器 |
@@ -944,11 +944,11 @@ $$DT = 5 \lg d - 5 \lg T + 5 \lg B$$
 
 主动声纳检测阈公式取决于检测器类型。检测器为能量检测器（对接收信号平方求和，即非相干检测）时，若发射波形是 CW 脉冲那样的简单信号 $BT = 1$ ，则 $DT = 5 \lg d - 5 \lg T + 5 \lg B$ （与被动声纳能量检测器的窄带检测阈相同）。若发射波形是调频等复杂信号 $BT \gg 1$ ，则 $DT = 5 \lg d - 5 \lg BT$ （与被动声纳能量检测器宽带检测阈相同）。当检测器为匹配滤波器（对接收信号拷贝相关，即相干检测）时， $DT = 5 \lg d - 10 \lg BT$ ，此时的发射波形一定是调频等复杂信号 $BT \gg 1$ 。
 
-当虚警概率 $P_f = 10^{-4}$ ，检测概率  $P_d = 90 \%$ ，时间带宽积 $BT = 1000$ 时，某型被动声纳能量检测器的检测阈 DT 。由 ROC 曲线可知检测指数 $d = 25$ ，检测阈 DT 为：
+当虚警概率 $P_f = 10^{-4}$ ，检测概率  $P_d = 90 \%$ ，时间带宽积 $BT = 1000$ 时，某型被动声纳能量检测器的检测阈 $DT$ 。由 ROC 曲线可知检测指数 $d = 25$ ，检测阈 $DT$ 为：
 
 $$DT = 5 \lg d - 5 \lg BT = -8.01 \text{dB}$$
 
-计算当虚警概率 $P_f = 10^{-4}$ ，检测概率 $P_d = 80 \%$ ，时间带宽积 $BT = 100$ 时，某型主动声纳匹配滤波器的检测阈 DT 。由 ROC 曲线可知检测指数 $d = 20$ ，检测阈 DT 为：
+当虚警概率 $P_f = 10^{-4}$ ，检测概率 $P_d = 80 \%$ ，时间带宽积 $BT = 100$ 时，某型主动声纳匹配滤波器的检测阈 $DT$ 。由 ROC 曲线可知检测指数 $d = 20$ ，检测阈 $DT$ 为：
 
 $$DT = 5 \lg d - 10 \lg BT = -13.49 \text{dB}$$
 
@@ -999,7 +999,7 @@ MAP 和 MLE 都是参数估计方法，它们都使用观测数据来估计模�
 在统计估计理论中，一个估计量的无偏性是指它的期望值等于真实参数值。无偏性可以用以下方式表达：
 
 $$
-b(\theta) = 
+b(\theta) =
 \begin{cases}
 0, & \text{if Unbiased} \\
 \neq 0, & \text{if Biased}
@@ -1130,7 +1130,7 @@ $$R = E[XX^H]$$
 
 1. 主动、被动、通信声纳作用距离计算，以及三类声纳检测阈之间的联系和区别。
 
-2. 优质因数 FOM 与作用距离之间的关系。
+2. 优质因数 $FOM$ 与作用距离之间的关系。
 
 ### 推导
 
@@ -1269,6 +1269,24 @@ $$
 $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 解得 $R = 11.6 \text{km}$
+
+### 仿真
+
+在 MATLAB 进行声纳传播损失的仿真。在 [`TL_of_Range`](./TL_of_Range) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+
+[`TL_of_Range/lib`](./TL_of_Range/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
+
+[`TL_of_Range/conf`](./TL_of_Range/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
+
+[`TL_of_Range`](./TL_of_Range) 中的 `*.m` 是仿真的主要脚本。 [`bellhop_PekerisTLB.m`](./TL_of_Range/bellhop_PekerisTLB.m) 声纳传播损失的仿真并对仿真结果进行绘图。
+
+[`TL_of_Range/results`](./TL_of_Range/results) 包含声纳传播损失的仿真结果。
+
+[`bellhop_PekerisTLB.jpg`](./TL_of_Range/results/bellhop_PekerisTLB.jpg) 和 [`bellhop_PekerisTLB_Mean-Filter.jpg`](./TL_of_Range/results/bellhop_PekerisTLB_Mean-Filter.jpg) 是声纳声纳传播损失的仿真结果，Mean-Filter 为均值滤波后的结果。
+
+<div align="center">
+    <img src="./TL_of_Range/results/bellhop_PekerisTLB.jpg" alt="bellhop_PekerisTLB.jpg" width="50%" /><img src="./TL_of_Range/results/bellhop_PekerisTLB_Mean-Filter.jpg" alt="bellhop_PekerisTLB_Mean-Filter.jpg" width="50%" />
+</div>
 
 ## 总结篇
 
