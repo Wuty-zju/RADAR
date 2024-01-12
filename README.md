@@ -484,9 +484,9 @@ $$B_{rms}^2 = \frac{\int_{-\infty}^{\infty} (2\pi f)^2 |X(f)|^2 df}{\int_{-\inft
 
 其中 $X(f)$ 是信号 $x(t)$ 的傅里叶变换。这个表达式计算了考虑信号功率谱密度的平均频率平方。
 
-##### Doppler频移估计标准差
+##### Doppler 频移估计标准差
 
-Doppler频移估计标准差 $\sigma_{f_d}$ 衡量系统在估计信号的Doppler频移方面的精度，与目标相对于发射器的速度有关。其表示为：
+Doppler 频移估计标准差 $\sigma_{f_d}$ 衡量系统在估计信号的Doppler频移方面的精度，与目标相对于发射器的速度有关。其表示为：
 
 $$\sigma_{f_d} = \frac{1}{\tau_{rms} \sqrt{2E/N_0}}$$
 
