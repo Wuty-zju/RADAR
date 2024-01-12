@@ -1299,15 +1299,15 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 ### 仿真
 
-在 MATLAB 进行声纳传播损失的仿真。在 [`Underwater_Target_Detection`](./TL_of_Range) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+在 MATLAB 进行声纳传播损失的仿真。在 [`TL_of_Range`](./TL_of_Range) 文件夹中包含用于仿真的 MATLAB 代码和资源。
 
-[`Underwater_Target_Detection/lib`](./TL_of_Range/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
+[`TL_of_Range/lib`](./TL_of_Range/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
 
-[`Underwater_Target_Detection/conf`](./TL_of_Range/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
+[`TL_of_Range/conf`](./TL_of_Range/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
 
-[`Underwater_Target_Detection`](./TL_of_Range) 中的 `*.m` 是仿真的主要脚本。 [`bellhop_PekerisTLB.m`](./TL_of_Range/bellhop_PekerisTLB.m) 声纳传播损失的仿真并对仿真结果进行绘图。
+[`TL_of_Range`](./TL_of_Range) 中的 `*.m` 是仿真的主要脚本。 [`bellhop_PekerisTLB.m`](./TL_of_Range/bellhop_PekerisTLB.m) 声纳传播损失的仿真并对仿真结果进行绘图。
 
-[`Underwater_Target_Detection/results`](./TL_of_Range/results) 包含声纳传播损失的仿真结果。
+[`TL_of_Range/results`](./TL_of_Range/results) 包含声纳传播损失的仿真结果。
 
 [`bellhop_PekerisTLB.jpg`](./TL_of_Range/results/bellhop_PekerisTLB.jpg) 和 [`bellhop_PekerisTLB_Mean-Filter.jpg`](./TL_of_Range/results/bellhop_PekerisTLB_Mean-Filter.jpg) 是声纳声纳传播损失的仿真结果，Mean-Filter 为均值滤波后的结果。
 
