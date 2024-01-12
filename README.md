@@ -1318,3 +1318,4 @@ Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（
 
 [`False-Alarm_Reduction_for_Low-Frequency_Active_Sonar_With_BPSK_Pulses_Experimental_Results.pdf`](./Notebooks/References/False-Alarm_Reduction_for_Low-Frequency_Active_Sonar_With_BPSK_Pulses_Experimental_Results.pdf) 这篇论文主要研究浅海中低频主动声呐（LFAS）性能的提升，重点解决了由于海底回声或杂波导致的高误报率问题。通过采用二进制相移键控（BPSK）脉冲，研究表明这种方法可以显著降低LFAS系统中的误报。BPSK脉冲在多普勒滤波方面展现出优异的交叉相关特性，同时保持了与频率调制（FM）脉冲相当的范围分辨率。实验结果证明，在实际条件下，这种方法能够有效减少误报，改善LFAS系统中目标的分类。然而，BPSK脉冲的使用存在实际限制，如高数据量和对多普勒扰动的敏感性。文章总结认为BPSK脉冲虽非万能解决方案，但在特定的声呐应用中是减少误报的有价值工具。
 
+[`SLIM-Detector_for_Undersampling_Preamble_in_Underwater_Acoustic_Communications.pdf`](./Notebooks/References/SLIM-Detector_for_Undersampling_Preamble_in_Underwater_Acoustic_Communications.pdf) 这篇论文深入研究了水下声学通信中前导序列探测的问题，指出传统匹配滤波器在非平稳噪声和多重回声环境下的性能局限，并介绍了一种新的探测器，稀疏学习通过迭代最小化 SLIM 检测器。 SLIM 检测器通过迭代过程强化强路径，弱化弱路径，提高了在降采样和混叠效应下的探测性能。文中还讨论了实际应用中的挑战和解决方案，并通过实验数据验证了 SLIM 检测器的优越性能。
