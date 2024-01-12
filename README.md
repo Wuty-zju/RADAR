@@ -1299,20 +1299,20 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 ### 仿真
 
-在 MATLAB 进行声纳传播损失的仿真。在 [`TL_of_Range`](./TL_of_Range) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+在 MATLAB 进行声纳传播损失的仿真。在 [`Underwater_Target_Detection`](./Underwater_Target_Detection) 文件夹中包含用于仿真的 MATLAB 代码和资源。
 
-[`TL_of_Range/lib`](./TL_of_Range/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
+[`Underwater_Target_Detection/lib`](./Underwater_Target_Detection/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
 
-[`TL_of_Range/conf`](./TL_of_Range/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
+[`Underwater_Target_Detection/conf`](./Underwater_Target_Detection/conf) 包含各种环境文件和输出结果文件，为仿真提供了必要的声学特性定义和条件。在这个文件夹中，`*.env`文件定义了仿真所需的声学环境特性，如声速剖面、水深和底部特性，`*.prt` 文件涉及仿真参数的设置或结果的后处理，`*.shd` 文件存储了仿真过程中计算出的声场分布。
 
-[`TL_of_Range`](./TL_of_Range) 中的 `*.m` 是仿真的主要脚本。 [`bellhop_PekerisTLB.m`](./TL_of_Range/bellhop_PekerisTLB.m) 声纳传播损失的仿真并对仿真结果进行绘图。
+[`Underwater_Target_Detection`](./Underwater_Target_Detection) 中的 `*.m` 是仿真的主要脚本。 [`bellhop_PekerisTLB.m`](./Underwater_Target_Detection/bellhop_PekerisTLB.m) 声纳传播损失的仿真并对仿真结果进行绘图。
 
-[`TL_of_Range/results`](./TL_of_Range/results) 包含声纳传播损失的仿真结果。
+[`Underwater_Target_Detection/results`](./Underwater_Target_Detection/results) 包含声纳传播损失的仿真结果。
 
-[`bellhop_PekerisTLB.jpg`](./TL_of_Range/results/bellhop_PekerisTLB.jpg) 和 [`bellhop_PekerisTLB_Mean-Filter.jpg`](./TL_of_Range/results/bellhop_PekerisTLB_Mean-Filter.jpg) 是声纳声纳传播损失的仿真结果，Mean-Filter 为均值滤波后的结果。
+[`bellhop_PekerisTLB.jpg`](./Underwater_Target_Detection/results/bellhop_PekerisTLB.jpg) 和 [`bellhop_PekerisTLB_Mean-Filter.jpg`](./Underwater_Target_Detection/results/bellhop_PekerisTLB_Mean-Filter.jpg) 是声纳声纳传播损失的仿真结果，Mean-Filter 为均值滤波后的结果。
 
 <div align="center">
-    <img src="./TL_of_Range/results/bellhop_PekerisTLB.jpg" alt="bellhop_PekerisTLB.jpg" width="50%" /><img src="./TL_of_Range/results/bellhop_PekerisTLB_Mean-Filter.jpg" alt="bellhop_PekerisTLB_Mean-Filter.jpg" width="50%" />
+    <img src="./Underwater_Target_Detection/results/bellhop_PekerisTLB.jpg" alt="bellhop_PekerisTLB.jpg" width="50%" /><img src="./Underwater_Target_Detection/results/bellhop_PekerisTLB_Mean-Filter.jpg" alt="bellhop_PekerisTLB_Mean-Filter.jpg" width="50%" />
 </div>
 
 ## 总结篇
@@ -1366,3 +1366,59 @@ Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（
 
 ### 仿真
 
+在 MATLAB 进行水下目标检测的仿真。在 [`Underwater_Target_Detection`](./Underwater_Target_Detection) 文件夹中包含用于仿真的 MATLAB 代码和资源。
+
+[`Underwater_Target_Detection/lib`](./Underwater_Target_Detection/lib) 包含多个 MATLAB 脚本和函数库，用于进行声纳损失函数的仿真。
+
+[`Underwater_Target_Detection`](./Underwater_Target_Detection) 中的 `*.m` 是仿真的主要脚本。 [`Underwater_Target_Detection.m`](./Underwater_Target_Detection/Underwater_Target_Detection.m) 水下目标检测的总脚本。
+
+[`Underwater_Target_Detection/results`](./Underwater_Target_Detection/results) 包含水下目标检测的仿真结果，包含典型深海声速剖面、Bellhop水声信道模拟、发射波形生成分析、FFT波束形成。
+
+[`Sound_speed_profile.png`](./Underwater_Target_Detection/results/Sound_speed_profile.png) 是典型深海声速剖面。
+
+<div align="center">
+    <img src="./Underwater_Target_Detection/results/Sound_speed_profile.png" alt="Sound_speed_profile.png" width="50%" />
+</div>
+
+[`BELLHOP_Munk_profile _Gaussian_beam_option.png`](./Underwater_Target_Detection/results/BELLHOP_Munk_profile_Gaussian_beam_option.png) 是Bellhop水声信道模拟。
+
+<div align="center">
+    <img src="./Underwater_Target_Detection/results/BELLHOP_Munk_profile _Gaussian_beam_option.png" alt="BELLHOP_Munk_profile_Gaussian_beam_option.png" width="50%" />
+</div>
+
+发射波形使用 FSK 调制，频率分别为 $8.05 kHz$ 和 $10.05 kHz$ ，脉宽 $0.1 ms$，表示为
+
+$$
+\begin{align*}
+x(t) &= \cos(2\pi f_1 t \cdot (1 - s(t)) + 2\pi f_2 t \cdot s(t)) \\
+     &= \cos(2\pi f_1 t + 2\pi (f_2 - f_1) t \cdot s(t))
+\end{align*}
+$$
+
+[`Time-domain_waveform_of_FSK_signal.png`](./Underwater_Target_Detection/results/Time-domain_waveform_of_FSK_signal.png) 和 [`Spectrum_of_FSK_signal.png`](./Underwater_Target_Detection/results/Spectrum_of_FSK_signal.png) 分为发射信号的时域波形和频域波形。
+
+<div align="center">
+    <img src="./Underwater_Target_Detection/results/Time-domain_waveform_of_FSK_signal.png" alt="Time-domain_waveform_of_FSK_signal.png" width="50%" /><img src="./Underwater_Target_Detection/results/Spectrum_of_FSK_signal.png" alt="Spectrum_of_FSK_signal.png" width="50%" />
+</div>
+
+[`Baseband_complex_envelope_of_FSK_signal.png`](./Underwater_Target_Detection/results/Baseband_complex_envelope_of_FSK_signal.png) 为信号的基带复包络。
+
+$$u = a(t) e^{j\phi(t)} = e^{j2\pi(f_2 - f_1)t \cdot s(t)}$$
+
+<div align="center">
+    <img src="./Underwater_Target_Detection/results/Baseband_complex_envelope_of_FSK_signal.png" alt="Baseband_complex_envelope_of_FSK_signal.png" width="50%" />
+</div>
+
+信号的模糊函数为
+
+$$
+\begin{align*}
+\Psi_u(\tau, f_d) = |\chi_u (\tau, f_d)|^2 = \left| \int_{-\infty}^{\infty} u(t) u^*(t+\tau) e^{j2\pi f_d t} dt \right|^2
+\end{align*}
+$$
+
+[`FFT_beam-forming.png`](./Underwater_Target_Detection/results/FFT_beam-forming.png) 为使用圆阵进行波束形成。
+
+<div align="center">
+    <img src="./Underwater_Target_Detection/results/FFT_beam-forming.png" alt="FFT_beam-forming.png" width="50%" />
+</div>
