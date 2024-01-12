@@ -3,47 +3,47 @@ clear;
 close all;
 
 %%
-fs=100000; % ²ÉÑùÂÊ
-T=0.0001; % Âö¿í
-num_d=20; % ÂëÔªÊı
-f1=8000; % ÆµÂÊ1
-f2=10000; % ÆµÂÊ2
+fs=100000; % é‡‡æ ·ç‡
+T=0.0001; % è„‰å®½
+num_d=20; % ç å…ƒæ•°
+f1=8050; % é¢‘ç‡1
+f2=10050; % é¢‘ç‡2
 
 %%
-s_d=randn(num_d,1)>0; % Ëæ»úÊı×ÖĞòÁĞ
+s_d=randn(num_d,1)>0; % éšæœºæ•°å­—åºåˆ—
 s=zeros(1,fs*T*num_d);
-s0=zeros(1,fs*T); % ÓÃÓÚÉú³És
+s0=zeros(1,fs*T); % ç”¨äºç”Ÿæˆs
 for ii=1:num_d
     s((ii-1)*fs*T+1:ii*fs*T)=s0+s_d(ii);
 end
 
-t=1/fs:1/fs:T*num_d; % Ê±¼äĞòÁĞ
-y=cos(2*pi*f1.*t+2*pi*(f2-f1).*t.*s); % Éú³ÉĞÅºÅ
+t=1/fs:1/fs:T*num_d; % æ—¶é—´åºåˆ—
+y=cos(2*pi*f1.*t+2*pi*(f2-f1).*t.*s); % ç”Ÿæˆä¿¡å·
 
-% Ê±Óò²¨ĞÎ
+% æ—¶åŸŸæ³¢å½¢
 figure(1);
 plot(t*1000,y);
-xlabel('Ê±¼ä/ms');
-ylabel('·ù¶È');
-title('FSKĞÅºÅÊ±Óò²¨ĞÎ');
+xlabel('æ—¶é—´/ms');
+ylabel('å¹…åº¦');
+title('FSKä¿¡å·æ—¶åŸŸæ³¢å½¢');
 
-%% ÆµÆ×
+%% é¢‘è°±
 figure(2);
 n=length(y);
 r=fft(y)/n;r=fftshift(r);
 f=linspace(-fs/2,fs/2,n);
 
 plot(f/1000,abs(r));
-xlabel('ÆµÂÊ/kHz');
-title('FSKĞÅºÅÆµÆ×');
+xlabel('é¢‘ç‡/kHz');
+title('FSKä¿¡å·é¢‘è°±');
 
-%% »ù´ø¸´°üÂç
+%% åŸºå¸¦å¤åŒ…ç»œ
 figure(3);
 u=exp(i*2*pi*(f2-f1).*t.*s);
 plot(t*1000,real(u));
 hold on;
 plot(t*1000,imag(u));
-legend('Êµ²¿','Ğé²¿');
-title('FSKĞÅºÅµÄ»ù´ø¸´°üÂç');
-xlabel('Ê±¼ä/ms');
-ylabel('·ù¶È');
+legend('å®éƒ¨','è™šéƒ¨');
+title('FSKä¿¡å·çš„åŸºå¸¦å¤åŒ…ç»œ');
+xlabel('æ—¶é—´/ms');
+ylabel('å¹…åº¦');
