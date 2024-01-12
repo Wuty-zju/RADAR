@@ -1331,7 +1331,7 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 4. 虚警概率 $P_f ≤ 10^{-4}$ 。
 
-Tip. 指标论证：混响控制的主动声纳方程 $SL - 2TL - RL + TS > DT$ 、声源级 $SL$ 、传播损失 $TL$ 、混响级 $RL$ 、目标强度 $TS$ 、检测阈 $DT$ 。
+Tip. 指标论证：混响控制的主动声纳方程 、声源级 $SL$ 、传播损失 $TL$ 、混响级 $RL$ 、目标强度 $TS$ 、检测阈 $DT$ 。
 
 Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（目标跟踪、目标分类）。
 
@@ -1369,35 +1369,25 @@ $$DT = 5\lg d - 10\lg BT = 11 dB$$
 
 由混响控制的主动声纳方程
 
-$$SL - 2TL - RL + TS \geq DT$$
+$$SL - 2TL - (NL - DI) \geq DT$$
 
-声纳方程
-
-$$SL - TL - (NL - DI) \geq DT$$
-
-计算声纳的优质因数 $FOM$
+计算声纳的传播损失 $TL$
 
 $$
 \begin{align*}
-FOM &\leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T \\
-    &= SL - NL + DI - 5 \log d + 10 \log T \\
-    &= 93 \text{dB}
+TL & \leq [ SL - (NL + 10 \lg B - DI) - DT ] / 2 \\
+    & = [ SL - NL + DI - 5 \lg d + 10 \lg T ] / 2 \\
+    & = 36.5 \text{dB}
 \end{align*}
 $$
 
 球面波传播损失 $FOM = TL$
 
-$$TL = 20 \log R + \alpha R = 93 \text{dB}$$
+$$TL = 20 \lg R + \alpha R = 36.5 \text{dB}$$
 
-解得 $R = 11.6 \text{km}$
+解得 $R = 13.74 \text{km}$ ，满足最大斜距和虚警概率的要求。
 
-- 其中 $TL=20\log_{10}R+\alpha R$，$NL$ 取 $NL+10\log_{10}B$
-- 所以 $TL=SL-DT-(NL+10\log_{10}B-DI)$
-- $TL=190-11-(70+10\log_{10}4000)=73.0\, \text{dB}$
-- 代入 $TL=20\log_{10}R+\alpha R$ 得
-- $R=3114\, \text{m}$
-- 作用距离为 $3114$ 米，大于 $3000$ 米，满足要求。
-
+其他推导部分，波形设计、波束形成、匹配滤波、目标检测
 
 ### 仿真
 
