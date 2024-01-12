@@ -988,7 +988,7 @@ $$\hat{\theta}_{\text{map}} = \underset{\theta}{\arg\max} \ p(\theta | x)$$
 
 #### 最大似然估计 MLE
 
-最大似然估计 MLE 用于估计未知的非随机参数。它的定义是使似然函数 $p(x | \theta)$ 最大的 $\theta$ 值作为估计量的方法。基本原理是，对于一个选定的 $\theta$，考虑 $x$ 落在一个小区域内的概率 $p(x | \theta) dx $，取 $p(x | \theta) dx$ 最大的那个 $\theta$ 作为估计量 $\hat{\theta}_{\text{ml}}$。
+最大似然估计 MLE 用于估计未知的非随机参数。它的定义是使似然函数 $p(x | \theta)$ 最大的 $\theta$ 值作为估计量的方法。基本原理是，对于一个选定的 $\theta$ ，考虑 $x$ 落在一个小区域内的概率 $p(x | \theta) dx$ ，取 $p(x | \theta) dx$ 最大的那个 $\theta$ 作为估计量 $\hat{\theta}_{\text{ml}}$ 。
 
 $$\hat{\theta}_{\text{ml}} = \underset{\theta}{\arg\max} p(x | \theta)$$
 
@@ -1062,7 +1062,7 @@ $$Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$$
 
 $$D_{\text{CBF}}(\theta) = \mathbf{e}^H \mathbf{R} \mathbf{e}$$
 
-其中，$\mathbf{e}$ 是由阵列的几何结构决定的导向矢量， $\mathbf{R}$ 是接收信号的协方差矩阵。在仿真中，CBF 法通过扫描不同的方向角 $\theta$ 并计算每个角度下的功率谱来估计信号的到达方向。
+其中， $\mathbf{e}$ 是由阵列的几何结构决定的导向矢量， $\mathbf{R}$ 是接收信号的协方差矩阵。在仿真中，CBF 法通过扫描不同的方向角 $\theta$ 并计算每个角度下的功率谱来估计信号的到达方向。
 
 ##### 最小方差无失真响应 MVDR
 
@@ -1325,7 +1325,7 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 1. 覆盖水平 $360 °$ 方位，测向均方根误差 $RMS ≤ 1 °$ 。
 
-2. 最大斜距 $500 m$，测距均方根误差 $RMS ≤ 1 m$。
+2. 最大斜距 $500 m$ ，测距均方根误差 $RMS ≤ 1 m$。
 
 3. 覆盖 $± 5$ 节径向速度，测速均方根误差 $RMS ≤ 0.5 m/s$。
 
@@ -1361,7 +1361,7 @@ Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（
 
 ### 推导
 
-混响控制的主动声纳方程发射参数为，工作频带 $8 \text{kHz}$ — $12 \text{kHz}$ ，载波 $10 \text{kHz}$ ，带宽 $4 \text{kHz}$ ，脉宽 $0.1 \text{ms}$ ，声源级 $190 \text{dB}$ 。取环境噪声级 $NL = 70 \text{dB}$ ，指向性指数 $DI = 0 \text{dB}$ ，声吸收 $\alpha = 1 \text{dB/km}$ ，球面扩展损失。$P_f = 10^{-4}$ 时要求 $P_d = 90\%$ 。
+混响控制的主动声纳方程发射参数为，工作频带 $8 \text{kHz}$ — $12 \text{kHz}$ ，载波 $10 \text{kHz}$ ，带宽 $4 \text{kHz}$ ，脉宽 $0.1 \text{ms}$ ，声源级 $190 \text{dB}$ 。取环境噪声级 $NL = 70 \text{dB}$ ，指向性指数 $DI = 0 \text{dB}$ ，混响级 $RL = 70 \text{dB}$$ ，声吸收 $\alpha = 1 \text{dB/km}$ ，球面扩展损失。$P_f = 10^{-4}$ 时要求 $P_d = 90\%$ 。
 
 根据 ROC 工作曲线知检测指数 $d=25$ ，使用匹配滤波，检测阈 $DT$ 为
 
@@ -1369,14 +1369,14 @@ $$DT = 5\lg d - 10\lg BT = 11 dB$$
 
 由混响控制的主动声纳方程
 
-$$SL - 2TL - (NL - DI) \geq DT$$
+$$SL - 2TL - RL \geq DT$$
 
 计算声纳的传播损失 $TL$
 
 $$
 \begin{align*}
-TL & \leq [ SL - (NL + 10 \lg B - DI) - DT ] / 2 \\
-    & = [ SL - NL + DI - 5 \lg d + 10 \lg T ] / 2 \\
+TL & \leq [ SL - (RL + 10 \lg B) - DT ] / 2 \\
+    & = [ SL - RL - 5 \lg d + 10 \lg T ] / 2 \\
     & = 36.5 \text{dB}
 \end{align*}
 $$
