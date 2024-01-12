@@ -1436,11 +1436,7 @@ $$u = a(t) e^{j\phi(t)} = e^{j2\pi(f_2 - f_1)t \cdot s(t)}$$
 
 信号的模糊函数为
 
-$$
-\begin{align*}
-\Psi_u(\tau, f_d) = |\chi_u (\tau, f_d)|^2 = \left| \int_{-\infty}^{\infty} u(t) u^*(t+\tau) e^{j2\pi f_d t} dt \right|^2
-\end{align*}
-$$
+$$\Psi_u(\tau, f_d) = |\chi_u (\tau, f_d)|^2 = \left| \int_{-\infty}^{\infty} u(t) u^*(t+\tau) e^{j2\pi f_d t} dt \right|^2$$
 
 [`FFT_beam-forming.png`](./Underwater_Target_Detection/results/FFT_beam-forming.png) 为使用圆阵进行波束形成。
 
