@@ -1162,12 +1162,12 @@ $$TL = 10\lg R + \alpha R$$
 
 | 声纳类型 | 控制类型 | 声纳方程 |
 |:------------------:|:--------------------:|:---------------------------------------:|
-| 主动声纳 | 单基地混响控制(中近程) | $SL - 2TL - RL + TS ≥ DT$ |
-| 主动声纳 | 单基地噪声控制(远程) | $SL - 2TL - (NL - DI) + TS ≥ DT$ |
-| 主动声纳 | 多基地混响控制 | $SL - TL_T - TL_R - RL + TS ≥ DT$ |
-| 主动声纳 | 多基地噪声控制 | $SL - TL_T - TL_R - (NL - DI) + TS ≥ DT$ |
-| 被动声纳 | - | $SL - TL - (NL - DI) ≥ DT$ |
-| 通信声纳 | - | $SL - TL - (NL - DI) ≥ DT$ |
+| 主动声纳 | 单基地混响控制(中近程) | $SL - 2TL - RL + TS \geq DT$ |
+| 主动声纳 | 单基地噪声控制(远程) | $SL - 2TL - (NL - DI) + TS \geq DT$ |
+| 主动声纳 | 多基地混响控制 | $SL - TL_T - TL_R - RL + TS \geq DT$ |
+| 主动声纳 | 多基地噪声控制 | $SL - TL_T - TL_R - (NL - DI) + TS \geq DT$ |
+| 被动声纳 | - | $SL - TL - (NL - DI) \geq DT$ |
+| 通信声纳 | - | $SL - TL - (NL - DI) \geq DT$ |
 
 </div>
 
@@ -1361,7 +1361,44 @@ Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（
 
 ### 推导
 
-[分析](#入门篇)
+混响控制的主动声纳方程发射参数为，工作频带 $8 \text{kHz}$ — $12 \text{kHz}$ ，载波 $10 \text{kHz}$ ，带宽 $4 \text{kHz}$ ，脉宽 $0.1 \text{ms}$ ，声源级 $190 \text{dB}$ 。取环境噪声级 $NL = 70 \text{dB}$ ，指向性指数 $DI = 0 \text{dB}$ ，声吸收 $\alpha = 1 \text{dB/km}$ ，球面扩展损失。$P_f = 10^{-4}$ 时要求 $P_d = 90\%$ 。
+
+根据 ROC 工作曲线知检测指数 $d=25$ ，使用匹配滤波，检测阈 $DT$ 为
+
+$$DT = 5\lg d - 10\lg BT = 11 dB$$
+
+由混响控制的主动声纳方程
+
+$$SL - 2TL - RL + TS \geq DT$$
+
+
+
+声纳方程
+
+$$SL - TL - (NL - DI) \geq DT$$
+
+计算声纳的优质因数 $FOM$
+
+$$
+\begin{align*}
+FOM &\leq SL - (NL + 10 \log B - DI) - 5 \log d + 10 \log B + 10 \log T \\
+    &= SL - NL + DI - 5 \log d + 10 \log T \\
+    &= 93 \text{dB}
+\end{align*}
+$$
+
+球面波传播损失 $FOM = TL$
+
+$$TL = 20 \log R + \alpha R = 93 \text{dB}$$
+
+解得 $R = 11.6 \text{km}$
+
+  - 其中 $TL=20\log_{10}R+\alpha R$，$NL$ 取 $NL+10\log_{10}B$
+  - 所以 $TL=SL-DT-(NL+10\log_{10}B-DI)$
+  - $TL=190-11-(70+10\log_{10}4000)=73.0\, \text{dB}$
+- 代入 $TL=20\log_{10}R+\alpha R$ 得
+  - $R=3114\, \text{m}$
+- 作用距离为 $3114$ 米，大于 $3000$ 米，满足要求。
 
 
 ### 仿真
@@ -1386,7 +1423,7 @@ Tip. 方案设计：波形设计、波束形成、匹配滤波、目标检测（
     <img src="./Underwater_Target_Detection/results/BELLHOP_Munk_profile _Gaussian_beam_option.png" alt="BELLHOP_Munk_profile_Gaussian_beam_option.png" width="50%" />
 </div>
 
-发射波形使用 FSK 调制，频率分别为 $8.05 kHz$ 和 $10.05 kHz$ ，脉宽 $0.1 ms$，表示为
+发射波形使用 FSK 调制，频率分别为 $8.05 kHz$ 和 $10.05 kHz$ ，脉宽 $0.1 ms$ ，表示为
 
 $$
 \begin{align*}
