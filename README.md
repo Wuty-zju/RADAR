@@ -1371,8 +1371,6 @@ $$DT = 5\lg d - 10\lg BT = 11 dB$$
 
 $$SL - 2TL - RL + TS \geq DT$$
 
-
-
 声纳方程
 
 $$SL - TL - (NL - DI) \geq DT$$
@@ -1393,11 +1391,11 @@ $$TL = 20 \log R + \alpha R = 93 \text{dB}$$
 
 解得 $R = 11.6 \text{km}$
 
-  - 其中 $TL=20\log_{10}R+\alpha R$，$NL$ 取 $NL+10\log_{10}B$
-  - 所以 $TL=SL-DT-(NL+10\log_{10}B-DI)$
-  - $TL=190-11-(70+10\log_{10}4000)=73.0\, \text{dB}$
+- 其中 $TL=20\log_{10}R+\alpha R$，$NL$ 取 $NL+10\log_{10}B$
+- 所以 $TL=SL-DT-(NL+10\log_{10}B-DI)$
+- $TL=190-11-(70+10\log_{10}4000)=73.0\, \text{dB}$
 - 代入 $TL=20\log_{10}R+\alpha R$ 得
-  - $R=3114\, \text{m}$
+- $R=3114\, \text{m}$
 - 作用距离为 $3114$ 米，大于 $3000$ 米，满足要求。
 
 
